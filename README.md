@@ -12,6 +12,7 @@ Método | Propósito | Tipo de Retorno
 
 #### 1.1.1. El objecto *Notification*
 El parámetro de entrada para los métodos *Send* y *SendAsync* es una instancia de *Notification*. Este objeto está definido así:
+
 Propiedad | Descripción | Tipo de Dato
 ---|---|---
 PartitionKey | | *Guid*
@@ -28,6 +29,7 @@ Type | | *String*
 Tags | | *String*
 
 #### 1.1.2. El objecto *Attachment*
+
 Propiedad | Descripción | Tipo de Dato
 ---|---|---
 ContentStream | Representa el flujo de datos del adjunto. | *System.IO.Stream*
@@ -37,6 +39,7 @@ Name | MIME content type name value in the content type associated with this att
 NameEncoding | An System.Text.Encoding value that specifies the type of name encoding. The default value is determined from the name of the attachment. | *System.Text.Encoding*
 
 #### 1.1.2. El objecto *NotificationProperty*
+
 Propiedad | Descripción | Tipo de Dato
 ---|---|---
 Key | Cadena que será utilizada como el nombre del la propiedad. | *String*
@@ -48,6 +51,7 @@ Define el contrato requerido para implementar un servicio de motor de plantilla.
 ### 1.3. Interceptors
 Los *Interceptors* permiten leer y manipular mensajes antes y después de su transferencia mediante un sender.
 Todos los *Interceptors* implementan la interface *NotificationServer.Core.INotificationInterceptor*, que está definida así:
+
 Método | Propósito | Tipo de Retorno
 ---|---|---
 **OnNotificationSending(_NotificationSendingContext_)** | Este método será llamado antes de enviar cada mensaje. | *void*
@@ -55,6 +59,7 @@ Método | Propósito | Tipo de Retorno
 
 #### 1.3.1 El objeto *NotificationSendingContext*
 Es el objeto de contexto enviado en el evento OnMailSending para permitir que inspeccione la Notification subyacente antes de que se envía. Este objeto está definido así:
+
 Propiedad | Descripción | Tipo de Dato
 ---|---|---
 Sender | El *Sender* que se está usando para enviar la notificación. | *Guid*
@@ -64,6 +69,7 @@ Cancel | Indicador que puede ser activado para evitar que se envíe la notificac
 
 #### 1.3.2. El objeto *NotificationSentContext*
 Es el objeto de contexto enviado en el evento OnMailSent para permitir que inspeccione la Notification subyacente después de que se envía. Este objeto está definido así:
+
 Propiedad | Descripción | Tipo de Dato
 ---|---|---
 Notification | La notificación que se está enviando. | *NotificationServer.Contract.Notification*
@@ -78,17 +84,20 @@ Los *providers* son los encargados de implementar las características del *Noti
 
 #### 1.5.1. Settings Repository
 Una vez la notificación es recibida por el *Host*, este debe resolver cada uno de los *Senders* que procesarán esa notificación y la configuración para cada uno de ellos. Todos los *Settings Repository* implementan la interface *NotificationServer.Service.Repositories.IConfigurationsRepository*, que está definida así:
+
 Método | Propósito | Tipo de Retorno
 ---|---|---
 **GetNotificationSpecsFor(_NotifyCommand_)** | Devuelve una lista de especificaciones de emisión, con las instrucciones de como procesar la notificación para cada uno de los *Senders* solicitados. | *IEnumerable<NotificationSpec>*
 
 #### 1.5.2. Template Repository
 Una vez la notificación es son resueltos las instrucciones de procesamiento para cada uno de los *Senders*, se resuelven las plantillas que procesaran el mensaje para cada uno de los *Senders* solicitados. Todos los *Template Repository* implementan la interface *NotificationServer.Core.ITemplateResolver*, que está definida así:
+
 Método | Propósito | Tipo de Retorno
 ---|---|---
 **Resolve(_String_, IDictionary<String, Object>)** | Devuelve una plantilla dada su nombre. Los paramétros son de uso opcional y pueden ser utilizados para soportar escenarios mas complejos. | *String*
 #### 1.5.3. Notifications Repository
 Una vez la notificación es procesada por el *Host* esta es persistida con el fin de poder reanudar el proceso en caso de que algo falle antes de que la notificación sea entregada. Todos los *Notifications Repository* implementan la interface *NotificationServer.Service.Repositories.INotificationsRepository*, que está definida así:
+
 Método | Propósito | Tipo de Retorno
 ---|---|---
 **Save(_NotifyCommand_)** | Guarda una tarea de notificacion. Devuelve un identificador de la notificación. | *Guid*
@@ -100,6 +109,7 @@ Método | Propósito | Tipo de Retorno
 
 #### 1.5.4. Users Repository
 El *Notific ation Server* dispone de un dashboard para el monitoreo de las tareas notificación recibidas. Este acceso está protegido por los usuario y clave entregados por este provider. Todos los *Users Repository* implementan la interface *NotificationServer.Service.Repositories.IUsersRepository*, que está definida así:
+
 Método | Propósito | Tipo de Retorno
 ---|---|---
 **Exists(_String_)** | Devuelve si un nombre de usuario existe. | *Boolean*
@@ -111,6 +121,7 @@ Método | Propósito | Tipo de Retorno
 
 ### 1.5. Scheduler
 El *Scheduler* es quien se encarga de realizar el agendamiento y control de las tareas de notificación. Todos los *Scheduler* implementan la interface *NotificationServer.Service.Repositories.INotificationsScheduler*, que está definida así:
+
 Método | Propósito | Tipo de Retorno
 ---|---|---
 **Startup(_IAppBuilder_)** | Este método es llamado junto a las tareas de arranque del Notification Server. Debe ser utilizado como un sustitudo del Global.asax. | *void*
@@ -138,6 +149,7 @@ Se debe evitar hacer lecturas de teclado. Todos los parámetros de configuració
 
 ### 2.2. NotificationServer.Senders.DnnCoreMessaging
 Entrega la notificación vía Dotnetnuke. Los parametros de configuración de este *Sender* son:
+
 Nombre | Descripción | Valor por Defecto
 ---|---|---
 **Host** | URL de sitio de DNN. |
@@ -151,6 +163,7 @@ Nombre | Descripción | Valor por Defecto
 
 ### 2.3. NotificationServer.Senders.Mail
 Entrega la notificación vía SMTP. Los parametros de configuración de este *Sender* son:
+
 Nombre | Descripción | Valor por Defecto
 ---|---|---
 **Host** | SMTP Host. |
@@ -168,6 +181,7 @@ Se debe evitar hacer lecturas de teclado. Todos los parámetros de configuració
 
 ### 2.5. NotificationServer.Senders.Rest
 Entrega la notificación vía REST. Los parametros de configuración de este *Sender* son:
+
 Nombre | Descripción | Valor por Defecto
 ---|---|---
 **Enabled** | Indica si el endpoint REST está habilitado. |
@@ -181,6 +195,7 @@ Nombre | Descripción | Valor por Defecto
 
 ### 2.6. NotificationServer.Senders.SendGrid
 Entrega la notificación vía Send Grid. Los parametros de configuración de este *Sender* son:
+
 Nombre | Descripción | Valor por Defecto
 ---|---|---
 **Usuario** | Usuario de API de Sendgrid. |
@@ -188,6 +203,7 @@ Nombre | Descripción | Valor por Defecto
 
 ### 2.8. NotificationServer.Senders.Twitter
 Entrega la notificación vía Twitter. Los parametros de configuración de este *Sender* son:
+
 Nombre | Descripción | Valor por Defecto
 ---|---|---
 **AccessToken** | Información provista por Twitter API. |
