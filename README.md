@@ -195,19 +195,19 @@ Nombre | Descripción | Valor por Defecto
 **ConsumerSecret** | Información provista por Twitter API. |
 
 ## 3. *Template Engines* disponibles
-### 3.1. Razor Template Engines
+- Razor Template Engines
 
 ## 4. *Core Interceptors* disponibles
-### 4.1. Reply Interceptor
-### 4.2. Options Token Replacing Interceptor
+- Reply Interceptor
+- Options Token Replacing Interceptor
 
 ## 5. *Providers* disponibles
-### 5.1. SQL Server Notifications Repository Provider
-### 5.2. SQL Server Settings Repository Provider
-### 5.3. SQL Server Template Repository Provider
-### 5.4. Azure Table Storage Notifications Repository Provider
-### 5.5. Azure Table Storage Settings Repository Provider
-### 5.6. Azure Table Storage Template Repository Provider
+- SQL Server Notifications Repository Provider
+- SQL Server Settings Repository Provider
+- SQL Server Template Repository Provider
+- Azure Table Storage Notifications Repository Provider
+- Azure Table Storage Settings Repository Provider
+- Azure Table Storage Template Repository Provider
 
 ## 6. *Scheduler* disponibles
-### 5.1. Hangfire Scheduler
+- Hangfire Scheduler
