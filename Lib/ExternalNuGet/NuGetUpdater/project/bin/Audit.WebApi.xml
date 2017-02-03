@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Audit.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:Audit.WebApi.ApiControllerExtensions.GetCurrentAuditScope(System.Web.Http.ApiController)">
+            <summary>
+            Gets the current Audit Scope.
+            </summary>
+            <param name="apiController">The API controller.</param>
+            <returns>The current Audit Scope or NULL.</returns>
+        </member>
+        <member name="P:Audit.WebApi.AuditApiAttribute.IncludeHeaders">
+            <summary>
+            Gets or sets a value indicating whether the output should include the Http Request Headers.
+            </summary>
+        </member>
+        <member name="P:Audit.WebApi.AuditApiAttribute.IncludeModelState">
+            <summary>
+            Gets or sets a value indicating whether the output should include Model State information.
+            </summary>
+        </member>
+        <member name="P:Audit.WebApi.AuditApiAttribute.IncludeResponseBody">
+            <summary>
+            Gets or sets a value indicating whether the output should include the Http Response text.
+            </summary>
+        </member>
+        <member name="P:Audit.WebApi.AuditApiAttribute.EventTypeName">
+            <summary>
+            Gets or sets a string indicating the event type to use.
+            Can contain the following placeholders:
+            - {controller}: replaced with the controller name.
+            - {action}: replaced with the action method name.
+            - {verb}: replaced with the HTTP verb used (GET, POST, etc).
+            </summary>
+        </member>
+        <member name="M:Audit.WebApi.AuditApiAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Occurs before the action method is invoked.
+            </summary>
+            <param name="actionContext">The action context.</param>
+        </member>
+        <member name="M:Audit.WebApi.AuditApiAttribute.OnActionExecuted(System.Web.Http.Filters.HttpActionExecutedContext)">
+            <summary>
+            Occurs after the action method is invoked.
+            </summary>
+            <param name="actionExecutedContext">The action executed context.</param>
+        </member>
+        <member name="M:Audit.WebApi.AuditEventExtensions.GetWebApiAuditAction(Audit.Core.AuditEvent)">
+            <summary>
+            Gets the Web API Event portion of the Audit Event.
+            </summary>
+            <param name="auditEvent">The audit event.</param>
+        </member>
+    </members>
+</doc>

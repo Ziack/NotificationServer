@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8F23C8BE-A813-4B09-A8A6-45D6DEE3E9DA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NotificationServer.Service.TableStorage</RootNamespace>
+    <AssemblyName>NotificationServer.Service.TableStorage</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=4.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\ExternalNuGet\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\Prop.cs" />
+    <Compile Include="TableEntities\NotificationBatchTableEntity.cs" />
+    <Compile Include="TableEntities\ApplicationTableEntity.cs" />
+    <Compile Include="TableEntities\AttachmentTableEntity.cs" />
+    <Compile Include="TableEntities\EventTableEntity.cs" />
+    <Compile Include="TableEntities\Extensions\ApplicationTableEntityExtensions.cs" />
+    <Compile Include="TableEntities\Extensions\NotificationExtensions.cs" />
+    <Compile Include="TableEntities\Extensions\UserExtensions.cs" />
+    <Compile Include="TableEntities\Extensions\UserTableEntityExtensions.cs" />
+    <Compile Include="TableEntities\NotificationSpecTableEntity.cs" />
+    <Compile Include="TableEntities\NotificationStatusTableEntity.cs" />
+    <Compile Include="TableEntities\NotificationTableEntity.cs" />
+    <Compile Include="TableEntities\NotifyCommandTableEntity.cs" />
+    <Compile Include="TableEntities\ServicesByApplicationTableEntity.cs" />
+    <Compile Include="TableEntities\ServicesTableEntity.cs" />
+    <Compile Include="TableEntities\TagsTableEntity.cs" />
+    <Compile Include="TableEntities\TemplateTableEntity.cs" />
+    <Compile Include="TableEntities\UserTableEntity.cs" />
+    <Compile Include="TableStorageApplicationsRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TableStorageConfigurationsRepository.cs" />
+    <Compile Include="TableStorageNotificationsRepository.cs" />
+    <Compile Include="TableStorageRepositoryBase.cs" />
+    <Compile Include="TableStorageTemplateResolver.cs" />
+    <Compile Include="TableStorageUsersRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Contract\NotificationServer.Contract.csproj">
+      <Project>{cf147e43-853d-4ca5-aeb3-c2c07846bf1f}</Project>
+      <Name>NotificationServer.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Core\NotificationServer.Core.csproj">
+      <Project>{051c79a8-7fee-4007-9886-be00708b9165}</Project>
+      <Name>NotificationServer.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Service\NotificationServer.Service.csproj">
+      <Project>{E7CB39E9-DC0F-4E9C-8AA8-CCCF22A4B3E1}</Project>
+      <Name>NotificationServer.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>NotificationServer.Service.SqlServerDb</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{8d82d4f3-b61a-4fdb-b3ea-baa0b27fa523}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>NotificationServer.Service.SqlServerDb</RootNamespace>
+    <AssemblyName>NotificationServer.Service.SqlServerDb</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Security\" />
+    <Folder Include="Notificacion" />
+    <Folder Include="Notificacion\Tables" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="Notificacion\Stored Procedures\" />
+    <Folder Include="Scripts" />
+    <Folder Include="Scripts\DDD-108 Notification Server" />
+    <Folder Include="Scripts\DDD-156 Notificación Crear Restful Sender" />
+    <Folder Include="Scripts\DDD-146 Notificacion Autorizaciones Explícitas" />
+    <Folder Include="Scripts\DDD-145 Notificación Revocar Permisos" />
+    <Folder Include="Scripts\DDD-142 + DDD-143 + DDD-144 + DDD-147 Plantillas Notificaciones" />
+    <Folder Include="Scripts\DDD-145 Feedback Configuración de plantillas" />
+    <Folder Include="Scripts\DDD-143 Notificacion Nuevo Documento" />
+    <Folder Include="Scripts\DDD-175 NOTIFICAR POR TWITTER" />
+    <Folder Include="Scripts\DDD-178 Seguridad del notificador" />
+    <Folder Include="Scripts\FWEB-982 Agregar lector de la cola de Amazon de Email" />
+    <Folder Include="Scripts\FWEB Soportar configuración de respuestas de notificación" />
+    <Folder Include="Scripts\FWEB Configuracion Notificaciones Factura UBL" />
+    <Folder Include="Scripts\FWEB-1218 Ajustar envio DIAN a la documentacion" />
+    <Folder Include="Notificacion\Functions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Security\Notificacion.sql" />
+    <Build Include="Notificacion\Tables\Adjuntos.sql" />
+    <Build Include="dbo\Functions\fn_GetLocalDate.sql" />
+    <Build Include="Notificacion\Tables\ServiciosPorAplicacion.sql" />
+    <Build Include="Notificacion\Tables\Servicios.sql" />
+    <Build Include="Notificacion\Tables\Aplicaciones.sql" />
+    <Build Include="Notificacion\Stored Procedures\pr_Aplicacion_Save.sql" />
+    <Build Include="Notificacion\Stored Procedures\pr_Adjuntos_Save.sql" />
+    <Build Include="Notificacion\Stored Procedures\pr_Notificaciones_Get.sql" />
+    <Build Include="Notificacion\Stored Procedures\pr_Notificaciones_Save.sql" />
+    <Build Include="dbo\Functions\fn_SplitString.sql" />
+    <Build Include="Notificacion\Stored Procedures\pr_NotificacionesConfiguracion_List.sql" />
+    <Build Include="Notificacion\Tables\EventosNotificaciones.sql" />
+    <Build Include="Notificacion\Stored Procedures\pr_EventosNotificaciones_Save.sql" />
+    <Build Include="Notificacion\Stored Procedures\pr_Servicio_Save.sql" />
+    <Build Include="Notificacion\Stored Procedures\pr_Aplicacion_Select.sql" />
+    <Build Include="Notificacion\Tables\Plantillas.sql" />
+    <Build Include="Notificacion\Stored Procedures\pr_Plantillas_Get.sql" />
+    <None Include="Scripts\DDD-156 Notificación Crear Restful Sender\1.Tablas.Actualizar.sql" />
+    <None Include="Scripts\DDD-156 Notificación Crear Restful Sender\2.Programacion.Actualizar.sql" />
+    <None Include="Scripts\DDD-156 Notificación Crear Restful Sender\3.Configurar aplicacion de pruebas.sql" />
+    <Build Include="Notificacion\Stored Procedures\pr_ServiciosPorAplicacion_Select.sql" />
+    <Build Include="Notificacion\Stored Procedures\pr_ServiciosPorAplicacion_Save.sql" />
+    <Build Include="Notificacion\Stored Procedures\pr_Servicio_Select.sql" />
+    <Build Include="Notificacion\Stored Procedures\pr_Plantillas_Select.sql" />
+    <Build Include="Notificacion\Stored Procedures\pr_Plantillas_Save.sql" />
+    <Build Include="Notificacion\Stored Procedures\pr_Plantillas_Delete.sql" />
+    <Build Include="Notificacion\Stored Procedures\pr_ServiciosPorAplicacion_Configurar.sql" />
+    <Build Include="Notificacion\Tables\Notificaciones.sql" />
+    <None Include="Scripts\DDD-145 Feedback Configuración de plantillas\1.Plantillas.Insert.sql" />
+    <None Include="Scripts\DDD-145 Feedback Configuración de plantillas\2.Plantillas.Insert.sql" />
+    <Build Include="Notificacion\Tables\TipoNotificacion.sql" />
+    <Build Include="Notificacion\Stored Procedures\pr_TipoNotificacion_Get.sql" />
+    <Build Include="Notificacion\Tables\Usuarios.sql" />
+    <Build Include="Notificacion\Stored Procedures\pr_Usuarios_Insert.sql" />
+    <Build Include="Notificacion\Stored Procedures\pr_Usuarios_Get.sql" />
+    <Build Include="Notificacion\Stored Procedures\pr_Usuarios_CambiarClave.sql" />
+    <Build Include="Notificacion\Stored Procedures\pr_Aplicacion_SetToken.sql" />
+    <Build Include="Notificacion\Tables\Tags.sql" />
+    <Build Include="Notificacion\Stored Procedures\pr_Tags_Save.sql" />
+    <None Include="Scripts\FWEB-982 Agregar lector de la cola de Amazon de Email\1.Configurar aplicacion de pruebas.sql" />
+    <None Include="Scripts\FWEB Soportar configuración de respuestas de notificación\1.Configurar aplicacion de pruebas.sql" />
+    <None Include="Scripts\FWEB Configuracion Notificaciones Factura UBL\1.Configurar aplicacion de pruebas.sql" />
+    <None Include="Scripts\FWEB-1218 Ajustar envio DIAN a la documentacion\1.Configurar aplicacion de pruebas.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="NotificationServer.Service.SqlServerDb.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\DDD-108 Notification Server\Configurar aplicacion de pruebas.sql" />
+    <None Include="Scripts\DDD-146 Notificacion Autorizaciones Explícitas\1.Tables.sql" />
+    <None Include="Scripts\DDD-146 Notificacion Autorizaciones Explícitas\2.Programmability.sql" />
+    <None Include="Scripts\DDD-146 Notificacion Autorizaciones Explícitas\3.Settings.Update.sql" />
+    <None Include="Scripts\DDD-146 Notificacion Autorizaciones Explícitas\4.Plantillas.Insert.sql" />
+    <None Include="Scripts\DDD-145 Notificación Revocar Permisos\1.Plantillas.Insert.sql" />
+    <None Include="Scripts\DDD-142 + DDD-143 + DDD-144 + DDD-147 Plantillas Notificaciones\1.Plantillas.Insert.sql" />
+    <None Include="Scripts\DDD-143 Notificacion Nuevo Documento\1.Plantillas.Insert.sql" />
+    <None Include="Scripts\DDD-175 NOTIFICAR POR TWITTER\Configurar Twitter.sql" />
+    <None Include="Scripts\DDD-175 NOTIFICAR POR TWITTER\Cargar plantilla.sql" />
+    <None Include="Scripts\DDD-178 Seguridad del notificador\1.Notificacion.Seguridad.sql" />
+    <None Include="Scripts\DDD-178 Seguridad del notificador\2.Notificacion.Usuarios.Insert.sql" />
+    <None Include="Scripts\DDD-178 Seguridad del notificador\3.PLColabEmision.Definiciones.Update.sql" />
+    <None Include="Notificacion\Functions\fn_SplitString.sql" />
+  </ItemGroup>
+</Project>

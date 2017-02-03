@@ -1,0 +1,580 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Audit.NET</name>
+    </assembly>
+    <members>
+        <member name="T:Audit.Core.AuditDataProvider">
+            <summary>
+            Base class for the persistence classes.
+            </summary>
+        </member>
+        <member name="M:Audit.Core.AuditDataProvider.Serialize``1(``0)">
+            <summary>
+            Override this method to provide a different serialization method for the values that need to be serialized before saving.
+            (old target value and custom fields)
+            </summary>
+        </member>
+        <member name="M:Audit.Core.AuditDataProvider.InsertEvent(Audit.Core.AuditEvent)">
+            <summary>
+            Insert an event to the data source returning the event id generated
+            </summary>
+            <param name="auditEvent">The audit event being inserted.</param>
+        </member>
+        <member name="M:Audit.Core.AuditDataProvider.ReplaceEvent(System.Object,Audit.Core.AuditEvent)">
+            <summary>
+            Saves the specified audit event.
+            Triggered when the scope is saved.
+            Override this method to replace the specified audit event on the data source.
+            </summary>
+            <param name="auditEvent">The audit event.</param>
+            <param name="eventId">The event id being replaced.</param>
+        </member>
+        <member name="T:Audit.Core.AuditEvent">
+            <summary>
+            Represents the output of the audit process
+            </summary>
+        </member>
+        <member name="P:Audit.Core.AuditEvent.Environment">
+            <summary>
+            The enviroment information
+            </summary>
+        </member>
+        <member name="P:Audit.Core.AuditEvent.EventType">
+            <summary>
+            Indicates the change type (i.e. CustomerOrder Update)
+            </summary>
+        </member>
+        <member name="P:Audit.Core.AuditEvent.CustomFields">
+            <summary>
+            The extension data. 
+            This will be serialized as the keys being properties of the current object.
+            </summary>
+        </member>
+        <member name="P:Audit.Core.AuditEvent.Target">
+            <summary>
+            The tracked target.
+            </summary>
+        </member>
+        <member name="P:Audit.Core.AuditEvent.Comments">
+            <summary>
+            Comments.
+            </summary>
+        </member>
+        <member name="P:Audit.Core.AuditEvent.StartDate">
+            <summary>
+            The date then the event started
+            </summary>
+        </member>
+        <member name="P:Audit.Core.AuditEvent.EndDate">
+            <summary>
+            The date then the event finished
+            </summary>
+        </member>
+        <member name="P:Audit.Core.AuditEvent.Duration">
+            <summary>
+             The duration of the operation in milliseconds.
+             </summary>
+        </member>
+        <member name="M:Audit.Core.AuditEvent.ToJson">
+            <summary>
+            Converts the event to its JSON representation using JSON.NET.
+            </summary>
+        </member>
+        <member name="P:Audit.Core.AuditEventEnvironment.UserName">
+            <summary>
+            Gets or sets the name of the user responsible for the change.
+            </summary>
+        </member>
+        <member name="P:Audit.Core.AuditEventEnvironment.MachineName">
+            <summary>
+            Gets or sets the name of the machine.
+            </summary>
+        </member>
+        <member name="P:Audit.Core.AuditEventEnvironment.DomainName">
+            <summary>
+            Gets or sets the name of the domain.
+            </summary>
+        </member>
+        <member name="P:Audit.Core.AuditEventEnvironment.CallingMethodName">
+            <summary>
+            The name of the method that has the audited code
+            </summary>
+        </member>
+        <member name="P:Audit.Core.AuditEventEnvironment.AssemblyName">
+            <summary>
+            The name of the assembly from where the audit scope was invoked
+            </summary>
+        </member>
+        <member name="P:Audit.Core.AuditEventEnvironment.Exception">
+            <summary>
+            The exception information (if any)
+            </summary>
+        </member>
+        <member name="P:Audit.Core.AuditEventEnvironment.Culture">
+            <summary>
+            The locale name
+            </summary>
+        </member>
+        <member name="T:Audit.Core.AuditScope">
+            <summary>
+            Makes a code block auditable.
+            </summary>
+            <typeparam name="T">The type of the object to audit</typeparam>
+            <summary>
+            A factory of scopes.
+            </summary>
+        </member>
+        <member name="M:Audit.Core.AuditScope.#ctor(System.String,System.Func{System.Object},System.Object,Audit.Core.AuditDataProvider,System.Nullable{Audit.Core.EventCreationPolicy},System.Boolean)">
+            <summary>
+            Creates an audit scope from a reference value, an event type and a reference Id.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="target">The target object getter.</param>
+            <param name="extraFields">An anonymous object that can contain additional fields will be merged into the audit event.</param>
+            <param name="creationPolicy">The event creation policy to use.</param>
+            <param name="dataProvider">The data provider to use. NULL to use the configured default data provider.</param>
+            <param name="isCreateAndSave">To indicate if the scope should be immediately saved after creation.</param>
+        </member>
+        <member name="P:Audit.Core.AuditScope.EventType">
+            <summary>
+            Indicates the change type
+            </summary>
+        </member>
+        <member name="P:Audit.Core.AuditScope.Event">
+            <summary>
+            Gets the event related to this scope.
+            </summary>
+        </member>
+        <member name="P:Audit.Core.AuditScope.DataProvider">
+            <summary>
+            Gets the data provider for this AuditScope instance.
+            </summary>
+        </member>
+        <member name="P:Audit.Core.AuditScope.EventId">
+            <summary>
+            Gets the current event ID, or NULL if not yet created.
+            </summary>
+        </member>
+        <member name="M:Audit.Core.AuditScope.Comment(System.String)">
+            <summary>
+            Add a textual comment to the event
+            </summary>
+        </member>
+        <member name="M:Audit.Core.AuditScope.Comment(System.String,System.Object[])">
+            <summary>
+            Add a textual comment to the event
+            </summary>
+        </member>
+        <member name="M:Audit.Core.AuditScope.SetCustomField``1(System.String,``0,System.Boolean)">
+            <summary>
+            Adds a custom field to the event
+            </summary>
+            <typeparam name="TC">The type of the value.</typeparam>
+            <param name="fieldName">Name of the field.</param>
+            <param name="value">The value object.</param>
+            <param name="serialize">if set to <c>true</c> the field is serialized immediately.</param>
+        </member>
+        <member name="M:Audit.Core.AuditScope.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Audit.Core.AuditScope.Discard">
+            <summary>
+            Discards this audit scope, so the event will not be written.
+            </summary>
+        </member>
+        <member name="M:Audit.Core.AuditScope.End">
+            <summary>
+            Saves the event.
+            </summary>
+        </member>
+        <member name="M:Audit.Core.AuditScope.Save">
+            <summary>
+            Manually Saves (insert/replace) the Event.
+            Use this method when the Data Provider's CreationPolicy is set to Manual.
+            </summary>
+        </member>
+        <member name="M:Audit.Core.AuditScope.CreateAndSave(System.String,System.Object,Audit.Core.AuditDataProvider)">
+            <summary>
+            Creates an audit scope with the given extra fields, and saves it right away.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="extraFields">An anonymous object that can contain additional fields to be merged into the audit event.</param>
+            <param name="dataProvider">The data provider to use. NULL to use the configured default data provider.</param>
+        </member>
+        <member name="M:Audit.Core.AuditScope.Create(System.String,System.Func{System.Object})">
+            <summary>
+            Creates an audit scope for a target object and an event type.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="target">The reference object getter.</param>
+        </member>
+        <member name="M:Audit.Core.AuditScope.Create(System.String,System.Func{System.Object},Audit.Core.EventCreationPolicy,Audit.Core.AuditDataProvider)">
+            <summary>
+            Creates an audit scope for a targer object and an event type, providing the creation policy and optionally the Data Provider.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="target">The reference object getter.</param>
+            <param name="creationPolicy">The event creation policy to use.</param>
+            <param name="dataProvider">The data provider to use. NULL to use the configured default data provider.</param>
+        </member>
+        <member name="M:Audit.Core.AuditScope.Create(System.String,System.Func{System.Object},System.Object)">
+            <summary>
+            Creates an audit scope from a reference value, and an event type.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="target">The reference object getter.</param>
+            <param name="extraFields">An anonymous object that can contain additional fields to be merged into the audit event.</param>
+        </member>
+        <member name="M:Audit.Core.AuditScope.Create(System.String,System.Func{System.Object},System.Object,Audit.Core.EventCreationPolicy,Audit.Core.AuditDataProvider)">
+            <summary>
+            Creates an audit scope from a reference value, and an event type.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="target">The reference object getter.</param>
+            <param name="extraFields">An anonymous object that can contain additional fields will be merged into the audit event.</param>
+            <param name="creationPolicy">The event creation policy to use.</param>
+            <param name="dataProvider">The data provider to use. NULL to use the configured default data provider.</param>
+        </member>
+        <member name="T:Audit.Core.ActionType">
+            <summary>
+            To indicate when the action on the Audit Scope should be performed.
+            </summary>
+        </member>
+        <member name="F:Audit.Core.ActionType.OnScopeCreated">
+            <summary>
+            When the Audit Scope is being created, before any saving.
+            </summary>
+        </member>
+        <member name="F:Audit.Core.ActionType.OnEventSaving">
+            <summary>
+            When the Audit Event on the Scope is about to be saved.
+            </summary>
+        </member>
+        <member name="T:Audit.Core.AuditTarget">
+            <summary>
+            Target object data.
+            </summary>
+        </member>
+        <member name="P:Audit.Core.AuditTarget.Type">
+            <summary>
+            The type of the object tracked
+            </summary>
+        </member>
+        <member name="P:Audit.Core.AuditTarget.SerializedOld">
+            <summary>
+            The value of the object tracked when the auditscope is created
+            </summary>
+        </member>
+        <member name="P:Audit.Core.AuditTarget.SerializedNew">
+            <summary>
+            The value of the object tracked after the auditscope is saved
+            </summary>
+        </member>
+        <member name="T:Audit.Core.Configuration">
+            <summary>
+            Global configuration for Audit.NET 
+            </summary>
+        </member>
+        <member name="P:Audit.Core.Configuration.CreationPolicy">
+            <summary>
+            Gets or Sets the Default creation policy.
+            </summary>
+        </member>
+        <member name="P:Audit.Core.Configuration.DataProvider">
+            <summary>
+            Gets or Sets the Default data provider.
+            </summary>
+        </member>
+        <member name="M:Audit.Core.Configuration.Setup">
+            <summary>
+            Configure Audit by using Fluent Configuration API.
+            </summary>
+        </member>
+        <member name="M:Audit.Core.Configuration.AddCustomAction(Audit.Core.ActionType,System.Action{Audit.Core.AuditScope})">
+            <summary>
+            Attaches an action to be performed globally on any AuditScope.
+            </summary>
+            <param name="when">To indicate when the action should be performed.</param>
+            <param name="action">The action to perform.</param>
+        </member>
+        <member name="M:Audit.Core.Configuration.ResetCustomActions">
+            <summary>
+            Resets the audit scope handlers. Removes all the attached actions for the Audit Scopes.
+            </summary>
+        </member>
+        <member name="M:Audit.Core.Configuration.InvokeScopeCustomActions(Audit.Core.ActionType,Audit.Core.AuditScope)">
+            <summary>
+            Invokes the scope custom actions.
+            </summary>
+        </member>
+        <member name="T:Audit.Core.EventCreationPolicy">
+            <summary>
+            Event Creation behaviors
+            </summary>
+        </member>
+        <member name="F:Audit.Core.EventCreationPolicy.Manual">
+            <summary> Insert/Replace the event manually by calling .Save() method on AuditScope.</summary>
+        </member>
+        <member name="F:Audit.Core.EventCreationPolicy.InsertOnEnd">
+            <summary> Insert the event when the scope is disposed. (Default)</summary>
+        </member>
+        <member name="F:Audit.Core.EventCreationPolicy.InsertOnStartReplaceOnEnd">
+            <summary> Insert the event when the scope starts, replace the event when the scope ends.</summary>
+        </member>
+        <member name="F:Audit.Core.EventCreationPolicy.InsertOnStartInsertOnEnd">
+            <summary> Insert the event when the scope starts, and insert another when the scope ends.</summary>
+        </member>
+        <member name="M:Audit.Core.ConfigurationApi.IActionConfigurator.WithAction(System.Action{Audit.Core.ConfigurationApi.IActionEventSelector})">
+            <summary>
+            Attaches a new global action to the scopes.
+            </summary>
+            <param name="actionSelector">The action configuration.</param>
+        </member>
+        <member name="M:Audit.Core.ConfigurationApi.IActionConfigurator.ResetActions">
+            <summary>
+            Removes all the global actions.
+            </summary>
+        </member>
+        <member name="T:Audit.Core.ConfigurationApi.IConfigurator">
+            <summary>
+            Provides a configuration for Audit mechanism.
+            </summary>
+        </member>
+        <member name="M:Audit.Core.ConfigurationApi.IConfigurator.UseDynamicProvider(System.Action{Audit.Core.ConfigurationApi.IDynamicDataProviderConfigurator})">
+            <summary>
+            Use a dynamic custom provider for the event output.
+            </summary>
+        </member>
+        <member name="M:Audit.Core.ConfigurationApi.IConfigurator.UseFileLogProvider(System.Action{Audit.Core.ConfigurationApi.IFileLogProviderConfigurator})">
+            <summary>
+            Store the events in files.
+            </summary>
+            <param name="config">The file log provider configuration.</param>
+        </member>
+        <member name="M:Audit.Core.ConfigurationApi.IConfigurator.UseFileLogProvider(System.String,System.String,System.Func{Audit.Core.AuditEvent,System.String},System.Func{Audit.Core.AuditEvent,System.String})">
+            <summary>
+            Store the events in files.
+            </summary>
+            <param name="directoryPath">Specifies the directory where to store the audit log files.</param>
+            <param name="filenamePrefix">Specifies the filename prefix to use in the audit log files.</param>
+            <param name="directoryPathBuilder">Specifies the directory builder to get the path where to store the audit log files. If this setting is provided, directoryPath setting will be ignored.</param>
+            <param name="filenameBuilder">Specifies the filename builder to get the filename to store the audit log for an event.</param>
+        </member>
+        <member name="M:Audit.Core.ConfigurationApi.IConfigurator.UseCustomProvider(Audit.Core.AuditDataProvider)">
+            <summary>
+            Use a custom provider for the event output.
+            </summary>
+        </member>
+        <member name="T:Audit.Core.ConfigurationApi.ICreationPolicyConfigurator">
+            <summary>
+            Provides a configuration for the default Creation Policy
+            </summary>
+        </member>
+        <member name="M:Audit.Core.ConfigurationApi.ICreationPolicyConfigurator.WithCreationPolicy(Audit.Core.EventCreationPolicy)">
+            <summary>
+            Specifies the event creation policy to use.
+            </summary>
+            <param name="policy">The event creation policy.</param>
+        </member>
+        <member name="T:Audit.Core.ConfigurationApi.IDynamicDataProviderConfigurator">
+            <summary>
+            Provides a configuration for a DynamicDataProvider
+            </summary>
+        </member>
+        <member name="M:Audit.Core.ConfigurationApi.IDynamicDataProviderConfigurator.OnInsert(System.Func{Audit.Core.AuditEvent,System.Object})">
+            <summary>
+            Attaches a function to be executed by the InsertEvent method.
+            </summary>
+            <param name="insertFunction">The insert function.</param>
+        </member>
+        <member name="M:Audit.Core.ConfigurationApi.IDynamicDataProviderConfigurator.OnInsert(System.Action{Audit.Core.AuditEvent})">
+            <summary>
+            Attaches an action to be executed by the InsertEvent method that will return a random Guid as the event id.
+            </summary>
+            <param name="insertAction">The insert action.</param>
+        </member>
+        <member name="M:Audit.Core.ConfigurationApi.IDynamicDataProviderConfigurator.OnReplace(System.Action{System.Object,Audit.Core.AuditEvent})">
+            <summary>
+            Attaches an action to be executed by the ReplaceEvent method.
+            </summary>
+            <param name="replaceAction">The replace action.</param>
+        </member>
+        <member name="M:Audit.Core.ConfigurationApi.IDynamicDataProviderConfigurator.OnInsertAndReplace(System.Action{Audit.Core.AuditEvent})">
+            <summary>
+            Attaches an action to be executed by the InsertEvent and the ReplaceEvent methods.
+            The InsertEvent will generate and return a random Guid as the event id.
+            </summary>
+            <param name="action">The action.</param>
+        </member>
+        <member name="M:Audit.Core.ConfigurationApi.IDynamicDataProviderConfigurator.OnInsertAndReplace(System.Action{System.Object,Audit.Core.AuditEvent})">
+            <summary>
+            Attaches an action to be executed by the InsertEvent and the ReplaceEvent methods, the first parameter (event id) will be NULL in case of insert.
+            The InsertEvent will generate and return a random Guid as the event id.
+            </summary>
+            <param name="action">The action.</param>
+        </member>
+        <member name="T:Audit.Core.ConfigurationApi.IEventLogProviderConfigurator">
+            <summary>
+            Provides a configuration for the EventLogDataProvider
+            </summary>
+        </member>
+        <member name="M:Audit.Core.ConfigurationApi.IEventLogProviderConfigurator.LogName(System.String)">
+            <summary>
+            Specifies the EventLog Log Name to use.
+            </summary>
+            <param name="logName">The Log Name</param>
+        </member>
+        <member name="M:Audit.Core.ConfigurationApi.IEventLogProviderConfigurator.SourcePath(System.String)">
+            <summary>
+            Specifies the EventLog Source Path to use.
+            </summary>
+            <param name="sourcePath">The Source Path</param>
+        </member>
+        <member name="M:Audit.Core.ConfigurationApi.IEventLogProviderConfigurator.MachineName(System.String)">
+            <summary>
+            Specifies the name of the machine to write to its EventLog.
+            </summary>
+            <param name="machineName">The Log Name</param>
+        </member>
+        <member name="T:Audit.Core.ConfigurationApi.IFileLogProviderConfigurator">
+            <summary>
+            Provides a configuration for the FileLogDataProvider
+            </summary>
+        </member>
+        <member name="M:Audit.Core.ConfigurationApi.IFileLogProviderConfigurator.Directory(System.String)">
+            <summary>
+            Specifies the directory where to store the audit log files. This setting is ignored when using DirectoryBuilder.
+            </summary>
+            <param name="directoryPath">The directory path.</param>
+        </member>
+        <member name="M:Audit.Core.ConfigurationApi.IFileLogProviderConfigurator.DirectoryBuilder(System.Func{Audit.Core.AuditEvent,System.String})">
+            <summary>
+            Specifies the directory builder to get the path where to store the audit log files. If this setting is provided, Directory setting will be ignored.
+            </summary>
+            <param name="directoryPathBuilder">The directory path builder. A function that returns the file system path to store the output for an event.</param>
+            <returns>IFileLogProviderConfigurator.</returns>
+        </member>
+        <member name="M:Audit.Core.ConfigurationApi.IFileLogProviderConfigurator.FilenamePrefix(System.String)">
+            <summary>
+            Specifies the filename prefix to use in the audit log files.
+            </summary>
+            <param name="filenamePrefix">The filename prefix.</param>
+        </member>
+        <member name="M:Audit.Core.ConfigurationApi.IFileLogProviderConfigurator.FilenameBuilder(System.Func{Audit.Core.AuditEvent,System.String})">
+            <summary>
+            Specifies the filename builder to get the filename to store the audit log for an event.
+            </summary>
+            <param name="filenameBuilder">The filename builder. A function that returns the file name to store the output for an event.</param>
+            <returns>IFileLogProviderConfigurator.</returns>
+        </member>
+        <member name="T:Audit.Core.Extensions.ExceptionExtensions">
+            <summary>
+            Exception extension methods
+            </summary>
+        </member>
+        <member name="M:Audit.Core.Extensions.ExceptionExtensions.GetExceptionInfo(System.Exception)">
+            <summary>
+            Gets a string including the type and messages for the given exception and its inner exceptions.
+            </summary>
+            <param name="exception">The exception</param>
+        </member>
+        <member name="T:Audit.Core.Extensions.TypeExtensions">
+            <summary>
+            Extension methods for Type type
+            </summary>
+        </member>
+        <member name="M:Audit.Core.Extensions.TypeExtensions.GetFullTypeName(System.Type)">
+            <summary>
+            Gets the complete type name, including pretty printing for generic types.
+            </summary>
+            <param name="type">The type</param>
+        </member>
+        <member name="T:Audit.Core.Providers.DynamicDataProvider">
+            <summary>
+            A dynamic provider that lets you create a an audit data provider on the fly by specifying the actions to take as lambda expressions.
+            </summary>
+        </member>
+        <member name="M:Audit.Core.Providers.DynamicDataProvider.AttachOnInsert(System.Func{Audit.Core.AuditEvent,System.Object})">
+            <summary>
+            Attaches a function to be executed by the InsertEvent method.
+            </summary>
+            <param name="insertFunction">The insert function.</param>
+        </member>
+        <member name="M:Audit.Core.Providers.DynamicDataProvider.AttachOnInsert(System.Action{Audit.Core.AuditEvent})">
+            <summary>
+            Attaches an action to be executed by the InsertEvent method that will return a random Guid as the event id.
+            </summary>
+            <param name="insertAction">The insert action.</param>
+        </member>
+        <member name="M:Audit.Core.Providers.DynamicDataProvider.AttachOnReplace(System.Action{System.Object,Audit.Core.AuditEvent})">
+            <summary>
+            Attaches an action to be executed by the ReplaceEvent method.
+            </summary>
+            <param name="replaceAction">The replace action.</param>
+        </member>
+        <member name="M:Audit.Core.Providers.DynamicDataProvider.AttachOnInsertAndReplace(System.Action{Audit.Core.AuditEvent})">
+            <summary>
+            Attaches an action to be executed by the InsertEvent and the ReplaceEvent methods.
+            The InsertEvent will generate and return a random Guid as the event id.
+            </summary>
+            <param name="action">The action.</param>
+        </member>
+        <member name="M:Audit.Core.Providers.DynamicDataProvider.AttachOnInsertAndReplace(System.Action{System.Object,Audit.Core.AuditEvent})">
+            <summary>
+            Attaches an action to be executed by the InsertEvent and the ReplaceEvent methods, the first parameter (event id) will be NULL in case of insert.
+            The InsertEvent will generate and return a random Guid as the event id.
+            </summary>
+            <param name="action">The action.</param>
+        </member>
+        <member name="M:Audit.Core.Providers.DynamicDataProvider.InsertEvent(Audit.Core.AuditEvent)">
+            <summary>
+            Inserts the event by invocating the attached actions.
+            </summary>
+            <param name="auditEvent">The audit event.</param>
+        </member>
+        <member name="M:Audit.Core.Providers.DynamicDataProvider.ReplaceEvent(System.Object,Audit.Core.AuditEvent)">
+            <summary>
+            Replaces the event by invocating the attached actions.
+            </summary>
+            <param name="eventId">The event identifier.</param>
+            <param name="auditEvent">The audit event.</param>
+        </member>
+        <member name="T:Audit.Core.Providers.FileDataProvider">
+            <summary>
+            Write the event outputs as files.
+            </summary>
+            <remarks>
+            Settings:
+            - DirectoryPathBuilder: A function that returns the file system path to store the output for an event. If this setting is provided, DirectoryPath setting will be ignored.
+            - DirectoryPath: Directory path to store the output files (default is current directory). This setting is ignored when using DirectoryPathBuilder.
+            - FilenameBuilder: A function that returns the file name to store the output for an event.
+            - FilenamePrefix: Filename prefix that will be appended with a timestamp.
+            </remarks>
+        </member>
+        <member name="P:Audit.Core.Providers.FileDataProvider.FilenameBuilder">
+            <summary>
+            Gets or sets the filename builder.
+            A function that returns the file system path to store the output for an event.
+            </summary>
+        </member>
+        <member name="P:Audit.Core.Providers.FileDataProvider.FilenamePrefix">
+            <summary>
+            Gets or sets the Filename prefix that will be used.
+            </summary>
+        </member>
+        <member name="P:Audit.Core.Providers.FileDataProvider.DirectoryPathBuilder">
+            <summary>
+            Gets or sets the directory path builder.
+            A function that returns the file system path to store the output for an event. If this setting is provided, DirectoryPath setting will be ignored.
+            </summary>
+        </member>
+        <member name="P:Audit.Core.Providers.FileDataProvider.DirectoryPath">
+            <summary>
+            Gets or sets the Directory path to store the output files (default is current directory). This setting is ignored when using DirectoryPathBuilder.
+            </summary>
+        </member>
+    </members>
+</doc>

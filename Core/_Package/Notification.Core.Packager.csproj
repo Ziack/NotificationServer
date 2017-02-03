@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{661BE9A3-7B50-47EB-A9F7-0ADD598505DE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_NoUsado</RootNamespace>
+    <AssemblyName>_NoUsado</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Notification.Core.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Config\NotificationServer.Config.csproj">
+      <Project>{8335ce02-42af-43ff-a6e2-ec87115a292c}</Project>
+      <Name>NotificationServer.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Contract\NotificationServer.Contract.csproj">
+      <Project>{cf147e43-853d-4ca5-aeb3-c2c07846bf1f}</Project>
+      <Name>NotificationServer.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Core\NotificationServer.Core.csproj">
+      <Project>{051c79a8-7fee-4007-9886-be00708b9165}</Project>
+      <Name>NotificationServer.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Service\NotificationServer.Service.csproj">
+      <Project>{e7cb39e9-dc0f-4e9c-8aa8-cccf22a4b3e1}</Project>
+      <Name>NotificationServer.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interceptors\Interceptors.CoreInterceptors\NotificationServer.Interceptors.CoreInterceptors.csproj">
+      <Project>{cc4c79ba-2c21-4671-8741-8004f3452840}</Project>
+      <Name>NotificationServer.Interceptors.CoreInterceptors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Providers\ServiceProviders\Service.Hangfire\NotificationServer.Service.Hangfire.csproj">
+      <Project>{b11f17d5-1ecc-4e1f-bd83-9c5234fdf0c7}</Project>
+      <Name>NotificationServer.Service.Hangfire</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Providers\ServiceProviders\Service.JWT\NotificationServer.Service.JWT.csproj">
+      <Project>{c18cef52-bebb-423f-b985-7a6eb80aa004}</Project>
+      <Name>NotificationServer.Service.JWT</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Providers\SqlServer\NotificationServer.Service.SqlServer.csproj">
+      <Project>{9cf640bd-53eb-434d-8e33-7cd51188e0b2}</Project>
+      <Name>NotificationServer.Service.SqlServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Providers\Templating\Razor\NotificationServer.Templating.Razor.csproj">
+      <Project>{503442a1-fb8f-4b09-a2d2-bfd4bddc7c88}</Project>
+      <Name>NotificationServer.Templating.Razor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PackageManifestName>Notification.Core</PackageManifestName>
+  </PropertyGroup>
+  <Import Project="$(GO_TOOLS_BASEDIR)\BuildScripts\ZipPackage.targets" Condition="Exists('$(GO_TOOLS_BASEDIR)')" />
+</Project>

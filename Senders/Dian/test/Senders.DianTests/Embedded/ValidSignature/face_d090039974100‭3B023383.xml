@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><fe:DebitNote xmlns:fe="http://www.dian.gov.co/contratos/facturaelectronica/v1" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:clm54217="urn:un:unece:uncefact:codelist:specification:54217:2001" xmlns:clm66411="urn:un:unece:uncefact:codelist:specification:66411:2001" xmlns:clmIANAMIMEMediaType="urn:un:unece:uncefact:codelist:specification:IANAMIMEMediaType:2003" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:sts="http://www.dian.gov.co/contratos/facturaelectronica/v1/Structures" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dian.gov.co/contratos/facturaelectronica/v1 ../xsd/DIAN_UBL.xsd urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2 ../../ubl2/common/UnqualifiedDataTypeSchemaModule-2.0.xsd urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2 ../../ubl2/common/UBL-QualifiedDatatypes-2.0.xsd">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <sts:DianExtensions>
+               <sts:InvoiceSource>
+                  <cbc:IdentificationCode listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode-2.0">CO</cbc:IdentificationCode>
+               </sts:InvoiceSource>
+               <sts:SoftwareProvider>
+                  <sts:ProviderID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Direccion de Impuestos y Aduanas Nacionales)" schemeName="SoftwareMakerID" schemeURI="http://www.dian.gov.co/contratos/facturaelectronica/v1/anexo_v1_0.html#SoftwareMakerID">900399741</sts:ProviderID>
+                  <sts:SoftwareID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Direccion de Impuestos y Aduanas Nacionales)" schemeName="SoftwareID" schemeURI="http://www.dian.gov.co/contratos/facturaelectronica/v1/anexo_v1_0.html#sofwareID">618724b5-fe2f-425b-a5d4-3d3e0bb475d6</sts:SoftwareID>
+               </sts:SoftwareProvider>
+               <sts:SoftwareSecurityCode schemeAgencyID="195" schemeAgencyName="CO, DIAN (Direccion de Impuestos y Aduanas Nacionales)" schemeName="SoftwareSecurityCode" schemeURI="http://www.dian.gov.co/contratos/facturaelectronica/v1/anexo_v1_0.html#SofwareSecurityCode">10fec9861863982ec544717fb88a9373d8136a1b97c02e937cb1a8f9c2079661</sts:SoftwareSecurityCode>
+            </sts:DianExtensions>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+		 <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" Id="xmldsig-183c5a61-9b33-469b-bc40-d3437d972050">
+<ds:SignedInfo>
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+<ds:Reference Id="xmldsig-183c5a61-9b33-469b-bc40-d3437d972050-ref0" URI="">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+<ds:DigestValue>Oz10s5ca2TPV/lygz919VPbgDgw=</ds:DigestValue>
+</ds:Reference>
+<ds:Reference URI="#xmldsig-183c5a61-9b33-469b-bc40-d3437d972050-keyinfo">
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+<ds:DigestValue>7TEp/outxEUitmxlTKLkEWlStiI=</ds:DigestValue>
+</ds:Reference>
+<ds:Reference Type="http://uri.etsi.org/01903#SignedProperties" URI="#xmldsig-183c5a61-9b33-469b-bc40-d3437d972050-signedprops">
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+<ds:DigestValue>g3djbEOl/e0ipEXgddAw0zsd2ZY=</ds:DigestValue>
+</ds:Reference>
+</ds:SignedInfo>
+<ds:SignatureValue Id="xmldsig-183c5a61-9b33-469b-bc40-d3437d972050-sigvalue">
+YblDI5oM31XtnEkDCi1e1OboItVFBoPkhaC8ZvVDylnyTX2+w3eQ3SQWQA1h9546Dov6UyFYK92p
+LO6OoJPYh2g8uBi7C/vX+ZDQYVBwny1Lt4M2P0ko1CQbe1a3mFG5RofVnRHzW8qirqwzJIP9ddr3
+ol1MeLaHCzVCCqTh87ADN+zUjSrCjfrLS986ZEkdGw2DMw8JhosDGUowRpQA25rbQYZIRvKHXVDH
+GmsJgvEJijCwxUchQ3SpeMukk4H5a1QX/EhK+Mop5Ol6PJnT+rdsXug+zYr5VxPPoFsp6bG7UhMv
+HyJGi4HMOv69XBJDOdifjREMSDi+boNfoHu5MA==
+</ds:SignatureValue>
+<ds:KeyInfo Id="xmldsig-183c5a61-9b33-469b-bc40-d3437d972050-keyinfo">
+<ds:X509Data>
+<ds:X509Certificate>
+MIILlTCCCX2gAwIBAgIIHFbt9khFkq8wDQYJKoZIhvcNAQEFBQAwggFiMTAwLgYDVQQNDCdDZXJ0
+aWZpY2FkbyBTdWJvcmRpbmFkYSAwMDEgQUMgR1NFIFMuQS4xGzAZBgNVBAMMElNVQjAwMSBBQyBH
+U0UgUy5BLjEXMBUGA1UEBRMOTklUIDkwMDIwNDI3MjgxHDAaBgkqhkiG9w0BCQEWDWNhQGdzZS5j
+b20uY28xLjAsBgNVBAoMJUdFU1RJT04gREUgU0VHVVJJREFEIEVMRUNUUk9OSUNBIFMuQS4xFDAS
+BgNVBAwMC0FDIEdTRSBTLkEuMR4wHAYDVQQLDBVodHRwOi8vd3d3LmdzZS5jb20uY28xTzBNBgNV
+BAkMRkNhcnJlcmEgMjEgQSBObyAxMjQgLSA1NSBPZmljaW5hIDMwMy4gaHR0cHM6Ly93d3cuZ3Nl
+LmNvbS5jby9kaXJlY2Npb24xFjAUBgNVBAcMDUJPR09Uw4EsIEQuQy4xCzAJBgNVBAYTAkNPMB4X
+DTE1MTIzMTE3MjMyOFoXDTE2MTIyMDE3MzMyOFowggGtMQswCQYDVQQGEwJDTzEkMCIGCSqGSIb3
+DQEJARYVcHJ1ZWJhczgzMEBnc2UuY29tLmNvMSIwIAYDVQQEExlBUEVMTElET1MgU09MSUNJVEFO
+VEUgODMwMQ8wDQYDVQQHEwZCT0dPVEExFDASBgNVBAgTC0JPR09UQSBELkMuMRMwEQYDVQQFEwox
+MTExMTExODMwMR8wHQYDVQQqExZOT01CUkUgU09MSUNJVEFOVEUgODMwMRswGQYDVQQKExJFTVBS
+RVNBIFBSVUVCQSA5MTgxFjAUBgNVBAsTDURFUEVOREVOQ0lBIDgxGzAZBgNVBAMTEkVNUFJFU0Eg
+UFJVRUJBIDkxODEQMA4GA1UEDBMHQ0FSR08gODE/MD0GA1UEDQw2Q2VydGlmaWNhZG8gZGUgUGVy
+c29uYSBKdXLDrWRpY2EgR1NFLVNVQjAwMS1QSi1TVy1LUFNDMRYwFAYMKwYBBAGB8yABARQBEwRD
+LkMuMRwwGgYMKwYBBAGB8yABARQCEwozMzMzMzMzOTE4MRwwGgYDVQQJDBNDTCA2NCBHICMgOTAg
+QSAtIDQ4MIIBIDANBgkqhkiG9w0BAQEFAAOCAQ0AMIIBCAKCAQEAi8J+/YwBcblOJ/6x8mDAPY31
+Z150fYe8C/lDWN/J7YAbQlFdQnJiOUOGiCKPTWtrjvvtFIZXoRLQ6LXnuhY4r2JB22Oj43ZTamdP
+rwx+qI+qN5M0qeYLaIP5KDw2nym1OzPwex/1tyVL6iAXjQfZsQJ0oS4OROn2IhK75RL0S5cdShWa
+0o2fbkGyH3/eXdnhJcTn6h0nJoNVT3wkWYBCKgOhuLmxO4A46ytefaFR8SmSynPQHUmgRv6zxFGf
+gLiuahvybzVCzlp1P1z9IPqt+JEa5FtB4YTy+tNFRTqPZGDIgTy80vJixOE6SV5FaGb6JCvQbqqa
+q4biRuzo1Vw8RQIBA6OCBQAwggT8MAwGA1UdEwEB/wQCMAAwDgYDVR0PAQH/BAQDAgP4MDMGA1Ud
+JQQsMCoGCCsGAQUFBwMBBggrBgEFBQcDAgYIKwYBBQUHAwQGCisGAQQBgjcKAwQwHQYDVR0OBBYE
+FA9GWSnfNsblheGjR7AxxuKdlCsBMHEGCCsGAQUFBwEBBGUwYzAiBggrBgEFBQcwAYYWaHR0cDov
+L29jc3AuZ3NlLmNvbS5jbzA9BggrBgEFBQcwAoYxaHR0cDovL2NlcnRzLmdzZS5jb20uY28vc3Vi
+L2NydF9zdWIwMDFfYWNfZ3NlLmNydDCCAfsGA1UdIwSCAfIwggHugBQdTSj3t2zwJTb05Tfd18n/
+RtKqc6GCAdGkggHNMIIByTEcMBoGCSqGSIb3DQEJARYNY2FAZ3NlLmNvbS5jbzEZMBcGA1UEAxMQ
+Uk9PVCBBQyBHU0UgUy5BLjEuMCwGA1UEChMlR0VTVElPTiBERSBTRUdVUklEQUQgRUxFQ1RST05J
+Q0EgUy5BLjEXMBUGA1UEBRMOTklUIDkwMDIwNDI3MjgxHjAcBgNVBAsMFWh0dHA6Ly93d3cuZ3Nl
+LmNvbS5jbzFPME0GA1UECQxGQ2FycmVyYSAyMSBBIE5vIDEyNCAtIDU1IE9maWNpbmEgMzAzLiBo
+dHRwczovL3d3dy5nc2UuY29tLmNvL2RpcmVjY2lvbjEWMBQGA1UEBwwNQk9HT1TDgSwgRC5DLjEL
+MAkGA1UEBhMCQ08xga4wgasGDCsGAQQBgfMgAQEKAgyBmkVudGlkYWQgZGUgQ2VydGlmaWNhY2nD
+s24gRGlnaXRhbCBBYmllcnRhIEF1dG9yaXphZGEgcG9yIGxhIFN1cGVyaW50ZW5kZW5jaWEgZGUg
+SW5kdXN0cmlhIHkgQ29tZXJjaW8gZGUgQ29sb21iaWEuIGh0dHBzOi8vd3d3LmdzZS5jb20uY28v
+UmVzb2x1Y2lvblNJQy5wZGaCAQEwcAYDVR0fBGkwZzAxoC+gLYYraHR0cDovL2NybC5nc2UuY29t
+LmNvL2NybF9zdWIwMDFfYWNfZ3NlLmNybDAyoDCgLoYsaHR0cDovL2NybDEuZ3NlLmNvbS5jby9j
+cmxfc3ViMDAxX2FjX2dzZS5jcmwwTgYDVR0RBEcwRYEVcHJ1ZWJhczgzMEBnc2UuY29tLmNvgRVw
+cnVlYmFzODMwQGdzZS5jb20uY2+BFXBydWViYXM4MzBAZ3NlLmNvbS5jbzAaBgNVHRIEEzARgQ9p
+bmZvQGdzZS5jb20uY28wgfwGA1UdIASB9DCB8TCB7gYPKwYBBAGB8yABCgEBBwEBMIHaMDwGCCsG
+AQUFBwIBFjBodHRwczovL2RwYy5nc2UuY29tLmNvL3N1Yi9kcGNfc3ViMDAxX2FjX2dzZS5wZGYw
+gZkGCCsGAQUFBwICMIGMGoGJU3VqZXRvIERQQyBBQyBHU0UgUy5BLiBFbnRpZGFkIGRlIENlcnRp
+ZmljYWNp824gRGlnaXRhbCBBYmllcnRhIC0gYXV0b3JpemFkYSBwb3IgbGEgU3VwZXJpbnRlbmRl
+bmNpYSBkZSBJbmR1c3RyaWEgeSBDb21lcmNpbyBkZSBDb2xvbWJpYS4wOQYIKwYBBQUHAQMELTAr
+MAgGBgQAjkYBATAIBgYEAI5GAQEwFQYGBACORgECMAsTA0NPUAIBAAIBADANBgkqhkiG9w0BAQUF
+AAOCAgEADO7aK45ZosN4Ylrsq+LjCRauxM1HOXAYv9pDSvT8p70QF8vaTeIvb3kK2ee47a8+mM9M
+XWpo3cdBYVvBMnkkgwvV3nRTGgp3thlQrZ2JsvSAmQHDwumQqolsVaXCCFxNsMLAR3Z6UOF7iPKJ
+7YPQSBXFDltnCJoy1/ksl5RS+wkc/Tos+5OUK2oZE4MSO4zhflwVw7GGIOAkFdRYAOezlZmOo2jj
+/JFrMvccyfvJEUg4NRIzRz5wTrdtBSZWlGAE1445KHXAP28uxSmNClFu0OnCnhjJ+pFO+24+5jFF
+l7+AnlIcehsevCkrUUWU1n6fWPQ+ls/ESuos2KUm5S5AY868sK2LSQA4u1dGzY+EMvi6Cd1pNzED
+Nv7XQ/nHjPE7J2YrUv0mHlN3azR/vsUyOS4VAAshr4HMG6tfTGijYFuRrRFLllttSs3Yx5WB0u2G
+Phi7Kj0lnw5hRRrd19PdPQPayV281f67q2uxA+v+sWQDlyogWxOP/TKcVTy1NCiejhIePesKbRoU
+ubO1OZ4DrtiVlbbi29lEBpLWtfHmioa5FW/sM5CqVvgzCNKMSP93BYjigytiz5iuErAFvBVooYIW
+Kt0jnTx6j1MEgutNv688lrlyrImmz/b2er4wwx7Z5fTHFJ7FmViETv9Ji7FFYkO/SPgzq9F9pLbi
+muhgVMk=
+</ds:X509Certificate>
+</ds:X509Data>
+</ds:KeyInfo>
+<ds:Object><xades:QualifyingProperties xmlns:xades="http://uri.etsi.org/01903/v1.3.2#" xmlns:xades141="http://uri.etsi.org/01903/v1.4.1#" Target="#xmldsig-183c5a61-9b33-469b-bc40-d3437d972050"><xades:SignedProperties Id="xmldsig-183c5a61-9b33-469b-bc40-d3437d972050-signedprops"><xades:SignedSignatureProperties><xades:SigningTime>2016-08-18T21:16:56.305-05:00</xades:SigningTime><xades:SigningCertificate><xades:Cert><xades:CertDigest><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><ds:DigestValue>A9JusDjoim9jwx8/XdA5R133GJg=</ds:DigestValue></xades:CertDigest><xades:IssuerSerial><ds:X509IssuerName>C=CO,L=BOGOTÁ\, D.C.,STREET=Carrera 21 A No 124 - 55 Oficina 303. https://www.gse.com.co/direccion,OU=http://www.gse.com.co,2.5.4.12=#0c0b41432047534520532e412e,O=GESTION DE SEGURIDAD ELECTRONICA S.A.,1.2.840.113549.1.9.1=#160d6361406773652e636f6d2e636f,2.5.4.5=#130e4e49542039303032303432373238,CN=SUB001 AC GSE S.A.,2.5.4.13=#0c27436572746966696361646f205375626f7264696e616461203030312041432047534520532e412e</ds:X509IssuerName><ds:X509SerialNumber>2042081123089355439</ds:X509SerialNumber></xades:IssuerSerial></xades:Cert><xades:Cert><xades:CertDigest><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><ds:DigestValue>neA9ha37k8i+NssaSJcDYHSRVlc=</ds:DigestValue></xades:CertDigest><xades:IssuerSerial><ds:X509IssuerName>1.3.6.1.4.1.31136.1.1.10.2=#0c819a456e7469646164206465204365727469666963616369c3b36e204469676974616c2041626965727461204175746f72697a61646120706f72206c61205375706572696e74656e64656e63696120646520496e64757374726961207920436f6d657263696f20646520436f6c6f6d6269612e2068747470733a2f2f7777772e6773652e636f6d2e636f2f5265736f6c7563696f6e5349432e706466,C=CO,L=BOGOTÁ\, D.C.,STREET=Carrera 21 A No 124 - 55 Oficina 303. https://www.gse.com.co/direccion,OU=http://www.gse.com.co,2.5.4.5=#130e4e49542039303032303432373238,O=GESTION DE SEGURIDAD ELECTRONICA S.A.,CN=ROOT AC GSE S.A.,1.2.840.113549.1.9.1=#160d6361406773652e636f6d2e636f</ds:X509IssuerName><ds:X509SerialNumber>1</ds:X509SerialNumber></xades:IssuerSerial></xades:Cert><xades:Cert><xades:CertDigest><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><ds:DigestValue>umwkPW9xzAO+zyQHNK7HhNIgbOo=</ds:DigestValue></xades:CertDigest><xades:IssuerSerial><ds:X509IssuerName>1.3.6.1.4.1.31136.1.1.10.2=#0c819a456e7469646164206465204365727469666963616369c3b36e204469676974616c2041626965727461204175746f72697a61646120706f72206c61205375706572696e74656e64656e63696120646520496e64757374726961207920436f6d657263696f20646520436f6c6f6d6269612e2068747470733a2f2f7777772e6773652e636f6d2e636f2f5265736f6c7563696f6e5349432e706466,C=CO,L=BOGOTÁ\, D.C.,STREET=Carrera 21 A No 124 - 55 Oficina 303. https://www.gse.com.co/direccion,OU=http://www.gse.com.co,2.5.4.5=#130e4e49542039303032303432373238,O=GESTION DE SEGURIDAD ELECTRONICA S.A.,CN=ROOT AC GSE S.A.,1.2.840.113549.1.9.1=#160d6361406773652e636f6d2e636f</ds:X509IssuerName><ds:X509SerialNumber>0</ds:X509SerialNumber></xades:IssuerSerial></xades:Cert></xades:SigningCertificate><xades:SignaturePolicyIdentifier><xades:SignaturePolicyId><xades:SigPolicyId><xades:Identifier>http://www.facturae.es/politica_de_firma_formato_facturae/politica_de_firma_formato_facturae_v3_1.pdf</xades:Identifier></xades:SigPolicyId><xades:SigPolicyHash><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><ds:DigestValue>Ohixl6upD6av8N7pEvDABhEL6hM=</ds:DigestValue></xades:SigPolicyHash></xades:SignaturePolicyId></xades:SignaturePolicyIdentifier><xades:SignerRole><xades:ClaimedRoles><xades:ClaimedRole>supplier</xades:ClaimedRole></xades:ClaimedRoles></xades:SignerRole></xades:SignedSignatureProperties></xades:SignedProperties></xades:QualifyingProperties></ds:Object>
+</ds:Signature></ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>UBL 2.0</cbc:UBLVersionID>
+   <cbc:CustomizationID/>
+   <cbc:ProfileID>DIAN 1.0</cbc:ProfileID>
+   <cbc:ID>990000003</cbc:ID>
+   <cbc:UUID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Direccion de Impuestos y Aduanas Nacionales)">9a520098d54856e8a922e5c5d85a3f2b9370ef44</cbc:UUID>
+   <cbc:IssueDate>2016-08-05</cbc:IssueDate>
+   <cbc:IssueTime>17:30:00</cbc:IssueTime>
+   <cbc:Note>Nota de debito para la factura 990001001</cbc:Note>
+   <cbc:DocumentCurrencyCode>COP</cbc:DocumentCurrencyCode>
+   <cac:DiscrepancyResponse>
+      <cbc:ReferenceID>990001002</cbc:ReferenceID>
+      <cbc:ResponseCode>2</cbc:ResponseCode>
+   </cac:DiscrepancyResponse>
+   <cac:BillingReference>
+      <cac:InvoiceDocumentReference>
+         <cbc:ID>990001002</cbc:ID>
+         <cbc:UUID>ab1cc16e70fd7c835ec10ee8178a9fabcef6d175</cbc:UUID>
+      </cac:InvoiceDocumentReference>
+   </cac:BillingReference>
+   <fe:AccountingSupplierParty>
+    <cbc:AdditionalAccountID>1</cbc:AdditionalAccountID>
+    <fe:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Direccion de Impuestos y Aduanas Nacionales)" schemeID="31">900399741</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Facture S.A.S.</cbc:Name>
+      </cac:PartyName>
+      <fe:PhysicalLocation>
+        <fe:Address>
+          <cbc:Department>Bolivar</cbc:Department>
+          <cbc:CitySubdivisionName/>
+          <cbc:CityName>Cartagena</cbc:CityName>
+          <cac:AddressLine>
+            <cbc:Line>Casa Arcadia, Manga Av. Jimenez calle 26 # 21-164</cbc:Line>
+          </cac:AddressLine>
+          <cac:Country>
+            <cbc:IdentificationCode>CO</cbc:IdentificationCode>
+          </cac:Country>
+        </fe:Address>
+      </fe:PhysicalLocation>
+      <fe:PartyTaxScheme>
+        <cbc:TaxLevelCode>REGISMP</cbc:TaxLevelCode>
+        <cac:TaxScheme/>
+      </fe:PartyTaxScheme>
+      <fe:PartyLegalEntity>
+        <cbc:RegistrationName>Facture S.A.S.</cbc:RegistrationName>
+      </fe:PartyLegalEntity>
+    </fe:Party>
+  </fe:AccountingSupplierParty>
+  <fe:AccountingCustomerParty>
+    <cbc:AdditionalAccountID>0</cbc:AdditionalAccountID>
+    <fe:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Direccion de Impuestos y Aduanas Nacionales)" schemeID="22">900949812</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>DATA EXPRESS LATINOAMERICA S A S</cbc:Name>
+      </cac:PartyName>
+      <fe:PhysicalLocation>
+        <fe:Address>
+          <cbc:Department>Bolivar</cbc:Department>
+          <cbc:CitySubdivisionName>Cartagena</cbc:CitySubdivisionName>
+          <cbc:CityName>Cartagena</cbc:CityName>
+          <cac:AddressLine>
+            <cbc:Line>Manga calle 26</cbc:Line>
+          </cac:AddressLine>
+          <cac:Country>
+            <cbc:IdentificationCode>CO</cbc:IdentificationCode>
+            <cbc:Name>Colombia</cbc:Name>
+          </cac:Country>
+        </fe:Address>
+      </fe:PhysicalLocation>
+      <fe:PartyTaxScheme>
+        <cbc:TaxLevelCode>2</cbc:TaxLevelCode>
+        <cac:TaxScheme/>
+      </fe:PartyTaxScheme>
+    </fe:Party>
+  </fe:AccountingCustomerParty>
+   <fe:LegalMonetaryTotal>
+      <cbc:LineExtensionAmount currencyID="COP">44763.75</cbc:LineExtensionAmount>
+      <cbc:TaxExclusiveAmount currencyID="COP">0</cbc:TaxExclusiveAmount>
+      <cbc:PayableAmount currencyID="COP">44763.75</cbc:PayableAmount>
+   </fe:LegalMonetaryTotal>
+   <cac:DebitNoteLine>
+      <cbc:ID>1</cbc:ID>
+      <cbc:UUID>fae97c90ab2f3d6a6bda3a84ea501a2938f817e3</cbc:UUID>
+      <cbc:Note>LÃ­nea-1 45910281427 fos0001_700085371_f7999_R469910-459-27223</cbc:Note>
+      <cbc:DebitedQuantity>345</cbc:DebitedQuantity>
+      <cbc:LineExtensionAmount currencyID="COP">44763.75</cbc:LineExtensionAmount>
+      <cbc:AccountingCostCode>2815050102-0001</cbc:AccountingCostCode>
+      <cac:Item>
+         <cbc:Description>LÃ­nea-1 45910281427 fos0001_700085371_f7999_R469910-459-27223</cbc:Description>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="COP">129.75</cbc:PriceAmount>
+      </cac:Price>
+   </cac:DebitNoteLine>
+</fe:DebitNote>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NHibernate.Caches.Redis</name>
+    </assembly>
+    <members>
+        <member name="M:NHibernate.Caches.Redis.RedisCacheProvider.SetConnectionMultiplexer(StackExchange.Redis.ConnectionMultiplexer)">
+            <summary>
+            Set the <see cref="T:StackExchange.Redis.ConnectionMultiplexer"/> to be used to
+            connect to Redis.
+            </summary>
+            <param name="connectionMultiplexer"></param>
+        </member>
+        <member name="M:NHibernate.Caches.Redis.RedisCacheProvider.SetOptions(NHibernate.Caches.Redis.RedisCacheProviderOptions)">
+            <summary>
+            Set the options to be used to configure each cache.
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="P:NHibernate.Caches.Redis.RedisCacheProviderOptions.Serializer">
+            <summary>
+            Get or set the serializer used for serializing/deserializing
+            values from Redis.
+            </summary>
+        </member>
+        <member name="P:NHibernate.Caches.Redis.RedisCacheProviderOptions.OnException">
+            <summary>
+            Get or set a handler for when exceptions occur during cache
+            operations.
+            </summary>
+        </member>
+        <member name="P:NHibernate.Caches.Redis.RedisCacheProviderOptions.LockValueFactory">
+            <summary>
+            Get or set a factory used for creating the value of the locks.
+            For example, this is helpful if you want to identify where the 
+            lock was created from (such as including the machine name, process
+            id and a random Guid).
+            </summary>
+        </member>
+        <member name="P:NHibernate.Caches.Redis.RedisCacheProviderOptions.Database">
+            <summary>
+            Control which Redis database is used for the cache.
+            </summary>
+        </member>
+    </members>
+</doc>

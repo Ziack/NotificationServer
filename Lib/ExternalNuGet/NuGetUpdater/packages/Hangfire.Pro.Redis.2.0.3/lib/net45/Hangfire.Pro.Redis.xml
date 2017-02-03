@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hangfire.Pro.Redis</name>
+    </assembly>
+    <members>
+        <member name="T:Hangfire.Pro.Redis.RedisStorage">
+            <summary>
+            Represents a background job storage for Hangfire based on Redis.
+            </summary>
+        </member>
+        <member name="M:Hangfire.Pro.Redis.RedisStorage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hangfire.Pro.Redis.RedisStorage"/> class
+            with the 'localhost' as a configuration string.
+            </summary>
+        </member>
+        <member name="M:Hangfire.Pro.Redis.RedisStorage.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hangfire.Pro.Redis.RedisStorage"/> class
+            based on user-defined configuration string based on StackExchange.Redis
+            format, for example: 'localhost:6379,ssl=true'. Please see 
+            https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Configuration.md
+            for details.
+            </summary>
+            <param name="configuration">Configuration string in StackExchange.Redis format.</param>
+        </member>
+        <member name="M:Hangfire.Pro.Redis.RedisStorage.#ctor(System.String,Hangfire.Pro.Redis.RedisStorageOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hangfire.Pro.Redis.RedisStorage"/> class
+            based on user-defined configuration string and specified options, for
+            example: 'localhost:6379,ssl=true'. Please see 
+            https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Configuration.md
+            for details.
+            </summary>
+            <param name="configuration">Configuration string in StackExchange.Redis format.</param>
+            <param name="options">Configuration options for Redis specific to Hangfire.</param>
+        </member>
+        <member name="M:Hangfire.Pro.Redis.RedisStorage.Dispose">
+            <summary>
+            Disposes a multiplexer instance, release all the associated Redis connections.
+            </summary>
+        </member>
+        <member name="M:Hangfire.Pro.Redis.RedisStorage.GetMonitoringApi">
+            <inheritdoc />
+        </member>
+        <member name="M:Hangfire.Pro.Redis.RedisStorage.GetConnection">
+            <inheritdoc />
+        </member>
+        <member name="M:Hangfire.Pro.Redis.RedisStorage.GetStateHandlers">
+            <inheritdoc />
+        </member>
+        <member name="M:Hangfire.Pro.Redis.RedisStorage.GetComponents">
+            <inheritdoc />
+        </member>
+        <member name="M:Hangfire.Pro.Redis.RedisStorage.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:Hangfire.Pro.Redis.RedisStorageOptions">
+            <summary>
+            Represents a configuration options used by Hangfire when <see cref="T:Hangfire.Pro.Redis.RedisStorage"/>
+            is used for storing background jobs.
+            </summary>
+        </member>
+        <member name="M:Hangfire.Pro.Redis.RedisStorageOptions.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hangfire.Pro.Redis.RedisStorageOptions"/>
+            class with the default settings.
+            </summary>
+        </member>
+        <member name="P:Hangfire.Pro.Redis.RedisStorageOptions.Database">
+            <summary>
+            Gets or sets a Redis database number to be used by Hangfire. When `null`,
+            then the `defaultDatabase` option from the configuration string is used.
+            Default: `null`.
+            </summary>
+        </member>
+        <member name="P:Hangfire.Pro.Redis.RedisStorageOptions.InvisibilityTimeout">
+            <summary>
+            Gets or sets a time interval, within which background job is considered
+            to be still successfully processed by a worker. When a timeout is elapsed,
+            another worker will be able to pick the same background job. Default: 30 minutes.
+            </summary>
+        </member>
+        <member name="P:Hangfire.Pro.Redis.RedisStorageOptions.Prefix">
+            <summary>
+            Gets or sets the prefix for all Redis keys related to Hangfire.
+            Default: 'hangfire:'.
+            </summary>
+        </member>
+        <member name="P:Hangfire.Pro.Redis.RedisStorageOptions.MaxSucceededListLength">
+            <summary>
+            Gets or sets the maximum visible background jobs in the `succeeed` list
+            to prevent it from growing indefinitely. Default: 1000.
+            </summary>
+        </member>
+        <member name="P:Hangfire.Pro.Redis.RedisStorageOptions.MaxDeletedListLength">
+            <summary>
+            Gets or sets the maximum visible background jobs in the `deleted` list
+            to prevent it from growing indefinitely. Default: 1000.
+            </summary>
+        </member>
+        <member name="P:Hangfire.Pro.Redis.RedisStorageOptions.AllowMultipleEndPointsWithoutRedLock">
+            <summary>
+            Gets or sets whether you can specify multiple endpoints without using
+            the RedLock algorithm. This is an UNSAFE option, and SHOULDN'T BE 
+            ENABLED unless you know what you are doing. Please see
+            http://redis.io/topics/distlock for details.
+            </summary>
+        </member>
+        <member name="P:Hangfire.Pro.Redis.RedisStorageOptions.SubscriptionIntegrityTimeout">
+            <summary>
+            Gets or sets the timeout for subscription-based fetch. The value should
+            be high enough (hours) to decrease the stress on a database. This is an 
+            additional layer to provide integrity, because otherwise subscriptions 
+            can be active for weeks, and bad things may happen during this time.
+            </summary>
+        </member>
+        <member name="T:Hangfire.RedisStorageGlobalConfigurationExtensions">
+            <summary>
+            Provides extension methods for the <see cref="T:Hangfire.IGlobalConfiguration"/> interface
+            related to the Redis background job storage.
+            </summary>
+        </member>
+        <member name="M:Hangfire.RedisStorageGlobalConfigurationExtensions.UseRedisStorage(Hangfire.IGlobalConfiguration)">
+            <summary>
+            Registers an instance of the <see cref="T:Hangfire.Pro.Redis.RedisStorage"/> class as a global storage 
+            for Hangfire with the default configuration string: 'localhost'.
+            </summary>
+        </member>
+        <member name="M:Hangfire.RedisStorageGlobalConfigurationExtensions.UseRedisStorage(Hangfire.IGlobalConfiguration,System.String)">
+            <summary>
+            Registers an instance of the <see cref="T:Hangfire.Pro.Redis.RedisStorage"/> class as a global storage
+            for Hangfire with the specified configuration string in StackExchange.Redis format.
+            Example: 'localhost:6379,ssl=true'. Please see 
+            https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Configuration.md
+            for details.
+            </summary>
+        </member>
+        <member name="M:Hangfire.RedisStorageGlobalConfigurationExtensions.UseRedisStorage(Hangfire.IGlobalConfiguration,System.String,Hangfire.Pro.Redis.RedisStorageOptions)">
+            <summary>
+            Registers an instance of the <see cref="T:Hangfire.Pro.Redis.RedisStorage"/> class as a global storage
+            for Hangfire with the specified configuration string in StackExchange.Redis format
+            and the given options. Example: 'localhost:6379,ssl=true'. Please see 
+            https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Configuration.md
+            for details.
+            </summary>
+        </member>
+        <member name="M:Hangfire.RedisStorageGlobalConfigurationExtensions.UseRedisMetrics(Hangfire.IGlobalConfiguration,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+            Registers a custom set of Redis-specific metrics to be shown on Dashboard UI's home
+            page. You can pass a dictionary with Redis' field names as keys, and custom titles
+            as values, e.g. { "connected_clients", "Connections" }. You can see more keys on the
+            http://redis.io/commands/info page.
+            </summary>
+        </member>
+        <member name="M:Hangfire.RedisStorageGlobalConfigurationExtensions.UseRedisMetrics(Hangfire.IGlobalConfiguration)">
+            <summary>
+            Registers default set of Redis-specific metrics to be shown on Dashboard UI's home
+            page. Default metrics include version, uptime, connections and memory values.
+            </summary>
+        </member>
+    </members>
+</doc>

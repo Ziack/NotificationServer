@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{18B4BA58-5B2A-4B1D-9DA9-F12F99BD642F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NotificationServer.Nancy</RootNamespace>
+    <AssemblyName>NotificationServer.Nancy</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Exceptionless">
+      <HintPath>..\..\..\..\..\Lib\ExternalNuGet\Exceptionless.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.Core">
+      <HintPath>..\..\..\..\..\Lib\ExternalNuGet\Hangfire.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.SqlServer">
+      <HintPath>..\..\..\..\..\Lib\ExternalNuGet\Hangfire.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="jose-jwt">
+      <HintPath>..\..\..\..\..\Lib\jose-jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Lib\ExternalNuGet\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Lib\ExternalNuGet\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Authentication.Forms, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Lib\ExternalNuGet\Nancy.Authentication.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Lib\ExternalNuGet\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DefaultImplementation\ConfigureNotificationServer.cs" />
+    <Compile Include="Entities\UserIdentity.cs" />
+    <Compile Include="Entities\UserMapper.cs" />
+    <Compile Include="Init\Bootstrapper.cs" />
+    <Compile Include="Lib\EmbeddedStaticContentConventionBuilder.cs" />
+    <Compile Include="Lib\NotificationRequestEventFactory.cs" />
+    <Compile Include="Modules\AppsModule.cs" />
+    <Compile Include="Modules\DashboardModule.cs" />
+    <Compile Include="Modules\LoginModule.cs" />
+    <Compile Include="Modules\NotificationsModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="ServiceLocation\Placeholder.txt" />
+    <Compile Include="ViewModels\ListAppsViewModel.cs" />
+    <Compile Include="ViewModels\NotificationViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Core\Common\Config\NotificationServer.Config.csproj">
+      <Project>{8335ce02-42af-43ff-a6e2-ec87115a292c}</Project>
+      <Name>NotificationServer.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Core\Common\Contract\NotificationServer.Contract.csproj">
+      <Project>{cf147e43-853d-4ca5-aeb3-c2c07846bf1f}</Project>
+      <Name>NotificationServer.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Core\Common\Core\NotificationServer.Core.csproj">
+      <Project>{051c79a8-7fee-4007-9886-be00708b9165}</Project>
+      <Name>NotificationServer.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Core\Common\Service\NotificationServer.Service.csproj">
+      <Project>{e7cb39e9-dc0f-4e9c-8aa8-cccf22a4b3e1}</Project>
+      <Name>NotificationServer.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Core\Providers\ServiceProviders\Service.Hangfire\NotificationServer.Service.Hangfire.csproj">
+      <Project>{b11f17d5-1ecc-4e1f-bd83-9c5234fdf0c7}</Project>
+      <Name>NotificationServer.Service.Hangfire</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Core\Providers\ServiceProviders\Service.JWT\NotificationServer.Service.JWT.csproj">
+      <Project>{c18cef52-bebb-423f-b985-7a6eb80aa004}</Project>
+      <Name>NotificationServer.Service.JWT</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Core\Providers\SqlServer\NotificationServer.Service.SqlServer.csproj">
+      <Project>{9cf640bd-53eb-434d-8e33-7cd51188e0b2}</Project>
+      <Name>NotificationServer.Service.SqlServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Core\Providers\Templating\Razor\NotificationServer.Templating.Razor.csproj">
+      <Project>{503442a1-fb8f-4b09-a2d2-bfd4bddc7c88}</Project>
+      <Name>NotificationServer.Templating.Razor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Dashboard\Index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Master.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Apps\Index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Login\Index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Apps\Client\Apps.ViewModel.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Apps\Client\Apps.Start.js" />
+    <EmbeddedResource Include="Views\Apps\Client\Apps.Model.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

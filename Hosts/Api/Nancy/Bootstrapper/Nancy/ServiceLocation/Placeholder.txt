@@ -1,0 +1,1 @@
+﻿C:\TFS1\Colab\NotificationServer\1Dev\Deployments\Nancy\NotificationServer.Nancy.DefaultImplementation\ConfigureNotificationServer.cs

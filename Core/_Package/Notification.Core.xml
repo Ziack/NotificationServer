@@ -1,0 +1,13 @@
+﻿<package>
+  <assemblies>
+    <assembly>NotificationServer.Config.dll</assembly>
+    <assembly>NotificationServer.Contract.dll</assembly>
+    <assembly>NotificationServer.Core.dll</assembly>
+    <assembly>NotificationServer.Interceptors.CoreInterceptors.dll</assembly>
+    <assembly>NotificationServer.Service.dll</assembly>
+    <assembly>NotificationServer.Service.Hangfire.dll</assembly>
+    <assembly>NotificationServer.Service.JWT.dll</assembly>
+    <assembly>NotificationServer.Service.SqlServer.dll</assembly>
+    <assembly>NotificationServer.Templating.Razor.dll</assembly>
+  </assemblies>
+</package>

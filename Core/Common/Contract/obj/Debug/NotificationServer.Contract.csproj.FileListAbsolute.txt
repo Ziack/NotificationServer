@@ -1,0 +1,5 @@
+C:\TFS1\Colab\NotificationServer\1Dev\1-Core\Common\Contract\bin\NotificationServer.Contract.dll
+C:\TFS1\Colab\NotificationServer\1Dev\1-Core\Common\Contract\bin\NotificationServer.Contract.pdb
+C:\TFS1\Colab\NotificationServer\1Dev\1-Core\Common\Contract\obj\Debug\NotificationServer.Contract.dll
+C:\TFS1\Colab\NotificationServer\1Dev\1-Core\Common\Contract\obj\Debug\NotificationServer.Contract.pdb
+C:\TFS1\Colab\NotificationServer\1Dev\1-Core\Common\Contract\obj\Debug\NotificationServer.Contract.csprojResolveAssemblyReference.cache

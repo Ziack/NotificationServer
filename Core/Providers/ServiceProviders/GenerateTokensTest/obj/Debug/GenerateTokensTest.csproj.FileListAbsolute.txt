@@ -1,0 +1,7 @@
+C:\TFS1\Colab\NotificationServer\1Dev\1-Core\Providers\ServiceProviders\GenerateTokensTest\bin\GenerateTokensTest.dll
+C:\TFS1\Colab\NotificationServer\1Dev\1-Core\Providers\ServiceProviders\GenerateTokensTest\bin\GenerateTokensTest.pdb
+C:\TFS1\Colab\NotificationServer\1Dev\1-Core\Providers\ServiceProviders\GenerateTokensTest\bin\jose-jwt.dll
+C:\TFS1\Colab\NotificationServer\1Dev\1-Core\Providers\ServiceProviders\GenerateTokensTest\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\TFS1\Colab\NotificationServer\1Dev\1-Core\Providers\ServiceProviders\GenerateTokensTest\obj\Debug\GenerateTokensTest.csprojResolveAssemblyReference.cache
+C:\TFS1\Colab\NotificationServer\1Dev\1-Core\Providers\ServiceProviders\GenerateTokensTest\obj\Debug\GenerateTokensTest.dll
+C:\TFS1\Colab\NotificationServer\1Dev\1-Core\Providers\ServiceProviders\GenerateTokensTest\obj\Debug\GenerateTokensTest.pdb

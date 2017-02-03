@@ -1,0 +1,183 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationServer.Windows", "Server\Windows\NotificationServer.Windows.csproj", "{998E7A8F-2481-4A8A-84E9-4ABC5EE3EDCC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Core", "1-Core", "{3F1B4423-4A36-482A-9ADD-18D0D3824E8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationServer.Contract", "..\..\1-Core\Common\Contract\NotificationServer.Contract.csproj", "{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationServer.Core", "..\..\1-Core\Common\Core\NotificationServer.Core.csproj", "{051C79A8-7FEE-4007-9886-BE00708B9165}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Senders", "2-Senders", "{76480D82-1AAC-4D35-95C5-B63586016074}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationServer.Senders.Mail", "..\..\2-Senders\Mail\NotificationServer.Senders.Mail.csproj", "{D7EA4561-6491-4CCC-BAFD-557CBC5274A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationServer.Senders.SendGrid", "..\..\2-Senders\SendGrid\NotificationServer.Senders.SendGrid.csproj", "{FB44E159-F0F7-45B3-9084-CC989EA79A65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationServer.Provider.PuertoBahia", "..\..\Old\ServiceProvider\Provider.PuertoBahia\NotificationServer.Provider.PuertoBahia.csproj", "{9801ED7E-7C5A-401F-BBB5-DC741B6291B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceProvider", "ServiceProvider", "{7F799008-608C-4B54-BE94-E76CF8171F8A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Pre|Any CPU = Pre|Any CPU
+		Pro|Any CPU = Pro|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Sandbox|Any CPU = Sandbox|Any CPU
+		Test|Any CPU = Test|Any CPU
+		Training|Any CPU = Training|Any CPU
+		Validation|Any CPU = Validation|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{998E7A8F-2481-4A8A-84E9-4ABC5EE3EDCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{998E7A8F-2481-4A8A-84E9-4ABC5EE3EDCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{998E7A8F-2481-4A8A-84E9-4ABC5EE3EDCC}.Pre|Any CPU.ActiveCfg = Pre|Any CPU
+		{998E7A8F-2481-4A8A-84E9-4ABC5EE3EDCC}.Pre|Any CPU.Build.0 = Pre|Any CPU
+		{998E7A8F-2481-4A8A-84E9-4ABC5EE3EDCC}.Pro|Any CPU.ActiveCfg = Pro|Any CPU
+		{998E7A8F-2481-4A8A-84E9-4ABC5EE3EDCC}.Pro|Any CPU.Build.0 = Pro|Any CPU
+		{998E7A8F-2481-4A8A-84E9-4ABC5EE3EDCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{998E7A8F-2481-4A8A-84E9-4ABC5EE3EDCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{998E7A8F-2481-4A8A-84E9-4ABC5EE3EDCC}.Sandbox|Any CPU.ActiveCfg = Sandbox|Any CPU
+		{998E7A8F-2481-4A8A-84E9-4ABC5EE3EDCC}.Sandbox|Any CPU.Build.0 = Sandbox|Any CPU
+		{998E7A8F-2481-4A8A-84E9-4ABC5EE3EDCC}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{998E7A8F-2481-4A8A-84E9-4ABC5EE3EDCC}.Test|Any CPU.Build.0 = Test|Any CPU
+		{998E7A8F-2481-4A8A-84E9-4ABC5EE3EDCC}.Training|Any CPU.ActiveCfg = Training|Any CPU
+		{998E7A8F-2481-4A8A-84E9-4ABC5EE3EDCC}.Training|Any CPU.Build.0 = Training|Any CPU
+		{998E7A8F-2481-4A8A-84E9-4ABC5EE3EDCC}.Validation|Any CPU.ActiveCfg = Validation|Any CPU
+		{998E7A8F-2481-4A8A-84E9-4ABC5EE3EDCC}.Validation|Any CPU.Build.0 = Validation|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Pre|Any CPU.ActiveCfg = Pre|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Pre|Any CPU.Build.0 = Pre|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Pro|Any CPU.ActiveCfg = Pro|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Pro|Any CPU.Build.0 = Pro|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Sandbox|Any CPU.ActiveCfg = Sandbox|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Sandbox|Any CPU.Build.0 = Sandbox|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Test|Any CPU.Build.0 = Test|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Training|Any CPU.ActiveCfg = Training|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Training|Any CPU.Build.0 = Training|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Validation|Any CPU.ActiveCfg = Validation|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Validation|Any CPU.Build.0 = Validation|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Pre|Any CPU.ActiveCfg = Pre|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Pre|Any CPU.Build.0 = Pre|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Pro|Any CPU.ActiveCfg = Pro|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Pro|Any CPU.Build.0 = Pro|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Release|Any CPU.Build.0 = Release|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Sandbox|Any CPU.ActiveCfg = Sandbox|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Sandbox|Any CPU.Build.0 = Sandbox|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Test|Any CPU.Build.0 = Test|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Training|Any CPU.ActiveCfg = Training|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Training|Any CPU.Build.0 = Training|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Validation|Any CPU.ActiveCfg = Validation|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Validation|Any CPU.Build.0 = Validation|Any CPU
+		{D7EA4561-6491-4CCC-BAFD-557CBC5274A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7EA4561-6491-4CCC-BAFD-557CBC5274A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7EA4561-6491-4CCC-BAFD-557CBC5274A7}.Pre|Any CPU.ActiveCfg = Release|Any CPU
+		{D7EA4561-6491-4CCC-BAFD-557CBC5274A7}.Pre|Any CPU.Build.0 = Release|Any CPU
+		{D7EA4561-6491-4CCC-BAFD-557CBC5274A7}.Pro|Any CPU.ActiveCfg = Release|Any CPU
+		{D7EA4561-6491-4CCC-BAFD-557CBC5274A7}.Pro|Any CPU.Build.0 = Release|Any CPU
+		{D7EA4561-6491-4CCC-BAFD-557CBC5274A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7EA4561-6491-4CCC-BAFD-557CBC5274A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7EA4561-6491-4CCC-BAFD-557CBC5274A7}.Sandbox|Any CPU.ActiveCfg = Release|Any CPU
+		{D7EA4561-6491-4CCC-BAFD-557CBC5274A7}.Sandbox|Any CPU.Build.0 = Release|Any CPU
+		{D7EA4561-6491-4CCC-BAFD-557CBC5274A7}.Test|Any CPU.ActiveCfg = Release|Any CPU
+		{D7EA4561-6491-4CCC-BAFD-557CBC5274A7}.Test|Any CPU.Build.0 = Release|Any CPU
+		{D7EA4561-6491-4CCC-BAFD-557CBC5274A7}.Training|Any CPU.ActiveCfg = Release|Any CPU
+		{D7EA4561-6491-4CCC-BAFD-557CBC5274A7}.Training|Any CPU.Build.0 = Release|Any CPU
+		{D7EA4561-6491-4CCC-BAFD-557CBC5274A7}.Validation|Any CPU.ActiveCfg = Release|Any CPU
+		{D7EA4561-6491-4CCC-BAFD-557CBC5274A7}.Validation|Any CPU.Build.0 = Release|Any CPU
+		{FB44E159-F0F7-45B3-9084-CC989EA79A65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB44E159-F0F7-45B3-9084-CC989EA79A65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB44E159-F0F7-45B3-9084-CC989EA79A65}.Pre|Any CPU.ActiveCfg = Pre|Any CPU
+		{FB44E159-F0F7-45B3-9084-CC989EA79A65}.Pre|Any CPU.Build.0 = Pre|Any CPU
+		{FB44E159-F0F7-45B3-9084-CC989EA79A65}.Pro|Any CPU.ActiveCfg = Pro|Any CPU
+		{FB44E159-F0F7-45B3-9084-CC989EA79A65}.Pro|Any CPU.Build.0 = Pro|Any CPU
+		{FB44E159-F0F7-45B3-9084-CC989EA79A65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB44E159-F0F7-45B3-9084-CC989EA79A65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB44E159-F0F7-45B3-9084-CC989EA79A65}.Sandbox|Any CPU.ActiveCfg = Sandbox|Any CPU
+		{FB44E159-F0F7-45B3-9084-CC989EA79A65}.Sandbox|Any CPU.Build.0 = Sandbox|Any CPU
+		{FB44E159-F0F7-45B3-9084-CC989EA79A65}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{FB44E159-F0F7-45B3-9084-CC989EA79A65}.Test|Any CPU.Build.0 = Test|Any CPU
+		{FB44E159-F0F7-45B3-9084-CC989EA79A65}.Training|Any CPU.ActiveCfg = Training|Any CPU
+		{FB44E159-F0F7-45B3-9084-CC989EA79A65}.Training|Any CPU.Build.0 = Training|Any CPU
+		{FB44E159-F0F7-45B3-9084-CC989EA79A65}.Validation|Any CPU.ActiveCfg = Validation|Any CPU
+		{FB44E159-F0F7-45B3-9084-CC989EA79A65}.Validation|Any CPU.Build.0 = Validation|Any CPU
+		{9801ED7E-7C5A-401F-BBB5-DC741B6291B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9801ED7E-7C5A-401F-BBB5-DC741B6291B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9801ED7E-7C5A-401F-BBB5-DC741B6291B7}.Pre|Any CPU.ActiveCfg = Pre|Any CPU
+		{9801ED7E-7C5A-401F-BBB5-DC741B6291B7}.Pre|Any CPU.Build.0 = Pre|Any CPU
+		{9801ED7E-7C5A-401F-BBB5-DC741B6291B7}.Pro|Any CPU.ActiveCfg = Pro|Any CPU
+		{9801ED7E-7C5A-401F-BBB5-DC741B6291B7}.Pro|Any CPU.Build.0 = Pro|Any CPU
+		{9801ED7E-7C5A-401F-BBB5-DC741B6291B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9801ED7E-7C5A-401F-BBB5-DC741B6291B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9801ED7E-7C5A-401F-BBB5-DC741B6291B7}.Sandbox|Any CPU.ActiveCfg = Sandbox|Any CPU
+		{9801ED7E-7C5A-401F-BBB5-DC741B6291B7}.Sandbox|Any CPU.Build.0 = Sandbox|Any CPU
+		{9801ED7E-7C5A-401F-BBB5-DC741B6291B7}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{9801ED7E-7C5A-401F-BBB5-DC741B6291B7}.Test|Any CPU.Build.0 = Test|Any CPU
+		{9801ED7E-7C5A-401F-BBB5-DC741B6291B7}.Training|Any CPU.ActiveCfg = Training|Any CPU
+		{9801ED7E-7C5A-401F-BBB5-DC741B6291B7}.Training|Any CPU.Build.0 = Training|Any CPU
+		{9801ED7E-7C5A-401F-BBB5-DC741B6291B7}.Validation|Any CPU.ActiveCfg = Validation|Any CPU
+		{9801ED7E-7C5A-401F-BBB5-DC741B6291B7}.Validation|Any CPU.Build.0 = Validation|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F} = {3F1B4423-4A36-482A-9ADD-18D0D3824E8B}
+		{051C79A8-7FEE-4007-9886-BE00708B9165} = {3F1B4423-4A36-482A-9ADD-18D0D3824E8B}
+		{D7EA4561-6491-4CCC-BAFD-557CBC5274A7} = {76480D82-1AAC-4D35-95C5-B63586016074}
+		{FB44E159-F0F7-45B3-9084-CC989EA79A65} = {76480D82-1AAC-4D35-95C5-B63586016074}
+		{9801ED7E-7C5A-401F-BBB5-DC741B6291B7} = {7F799008-608C-4B54-BE94-E76CF8171F8A}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://fctfs1:8080/tfs/colab
+		SccProjectUniqueName0 = Server\\Windows\\NotificationServer.Windows.csproj
+		SccProjectName0 = Server/Windows
+		SccAuxPath0 = http://fctfs1:8080/tfs/colab
+		SccLocalPath0 = Server\\Windows
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = ..\\..\\1-Core\\Common\\Contract\\NotificationServer.Contract.csproj
+		SccProjectTopLevelParentUniqueName1 = Facture.Notification.WinSvc.sln
+		SccProjectName1 = ../../1-Core/Common/Contract
+		SccAuxPath1 = http://fctfs1:8080/tfs/colab
+		SccLocalPath1 = ..\\..\\1-Core\\Common\\Contract
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = ..\\..\\1-Core\\Common\\Core\\NotificationServer.Core.csproj
+		SccProjectTopLevelParentUniqueName2 = Facture.Notification.WinSvc.sln
+		SccProjectName2 = ../../1-Core/Common/Core
+		SccAuxPath2 = http://fctfs1:8080/tfs/colab
+		SccLocalPath2 = ..\\..\\1-Core\\Common\\Core
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName3 = ..\\..\\2-Senders\\Mail\\NotificationServer.Senders.Mail.csproj
+		SccProjectTopLevelParentUniqueName3 = Facture.Notification.WinSvc.sln
+		SccProjectName3 = ../../2-Senders/Mail
+		SccAuxPath3 = http://fctfs1:8080/tfs/colab
+		SccLocalPath3 = ..\\..\\2-Senders\\Mail
+		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName4 = ..\\..\\2-Senders\\SendGrid\\NotificationServer.Senders.SendGrid.csproj
+		SccProjectTopLevelParentUniqueName4 = Facture.Notification.WinSvc.sln
+		SccProjectName4 = ../../2-Senders/SendGrid
+		SccAuxPath4 = http://fctfs1:8080/tfs/colab
+		SccLocalPath4 = ..\\..\\2-Senders\\SendGrid
+		SccProvider4 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName5 = ..\\..\\Old\\ServiceProvider\\Provider.PuertoBahia\\NotificationServer.Provider.PuertoBahia.csproj
+		SccProjectTopLevelParentUniqueName5 = Facture.Notification.WinSvc.sln
+		SccProjectName5 = ../../Old/ServiceProvider/Provider.PuertoBahia
+		SccAuxPath5 = http://fctfs1:8080/tfs/colab
+		SccLocalPath5 = ..\\..\\Old\\ServiceProvider\\Provider.PuertoBahia
+		SccProvider5 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal

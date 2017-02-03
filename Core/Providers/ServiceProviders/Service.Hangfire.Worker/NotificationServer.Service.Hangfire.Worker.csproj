@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{481A8303-DE78-4170-9FB8-7F31492033DC}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Service.Hangfire.Worker</RootNamespace>
+    <AssemblyName>Service.Hangfire.Worker</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Hangfire.Core, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Lib\ExternalNuGet\Hangfire.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.Pro.Redis">
+      <HintPath>..\..\..\..\Lib\ExternalNuGet\Hangfire.Pro.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="Insight.Database, Version=5.2.8.0, Culture=neutral, PublicKeyToken=f35c6ef87e515afc" />
+    <Reference Include="Insight.Database.Configuration, Version=5.2.8.0, Culture=neutral, PublicKeyToken=f35c6ef87e515afc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Lib\ExternalNuGet\Insight.Database.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Insight.Database.Providers.Default">
+      <HintPath>..\..\..\..\Lib\ExternalNuGet\Insight.Database.Providers.Default.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Lib\ExternalNuGet\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Topshelf">
+      <HintPath>..\..\..\..\Lib\ExternalNuGet\Topshelf.dll</HintPath>
+    </Reference>
+    <Reference Include="Wintellect.Threading">
+      <HintPath>..\..\..\..\Lib\ExternalNuGet\Wintellect.Threading.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="JobContext.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Senders\Amazon\Senders.Amazon\NotificationServer.Senders.Amazon.csproj">
+      <Project>{728781d2-86f1-4ba5-8322-b954d582f76b}</Project>
+      <Name>NotificationServer.Senders.Amazon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Senders\Dian\dev\Senders.Dian\NotificationServer.Senders.Dian.csproj">
+      <Project>{d2c7e249-f2bf-45a6-8918-a919b13690b4}</Project>
+      <Name>NotificationServer.Senders.Dian</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Senders\DnnCoreMessaging\NotificationServer.Senders.DnnCoreMessaging.csproj">
+      <Project>{6df2d2be-9139-43e8-9f68-ad4fdb630f56}</Project>
+      <Name>NotificationServer.Senders.DnnCoreMessaging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Senders\Mail\NotificationServer.Senders.Mail.csproj">
+      <Project>{d7ea4561-6491-4ccc-bafd-557cbc5274a7}</Project>
+      <Name>NotificationServer.Senders.Mail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Senders\Rest\NotificationServer.Senders.Rest.csproj">
+      <Project>{23f507ff-edae-4cea-ad7f-17d5b4fdd61a}</Project>
+      <Name>NotificationServer.Senders.Rest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Senders\SendGrid\NotificationServer.Senders.SendGrid.csproj">
+      <Project>{fb44e159-f0f7-45b3-9084-cc989ea79a65}</Project>
+      <Name>NotificationServer.Senders.SendGrid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Senders\SPRC\NotificationServer.Senders.SPRC.csproj">
+      <Project>{addfd99c-02da-42af-8431-9c73eef39623}</Project>
+      <Name>NotificationServer.Senders.SPRC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Senders\Twitter\NotificationServer.Senders.Twitter.csproj">
+      <Project>{7369d7a1-0665-44ea-a515-83816006d666}</Project>
+      <Name>NotificationServer.Senders.Twitter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Config\NotificationServer.Config.csproj">
+      <Project>{8335CE02-42AF-43FF-A6E2-EC87115A292C}</Project>
+      <Name>NotificationServer.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Core\NotificationServer.Core.csproj">
+      <Project>{051c79a8-7fee-4007-9886-be00708b9165}</Project>
+      <Name>NotificationServer.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Service\NotificationServer.Service.csproj">
+      <Project>{e7cb39e9-dc0f-4e9c-8aa8-cccf22a4b3e1}</Project>
+      <Name>NotificationServer.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Interceptors\Interceptors.CoreInterceptors\NotificationServer.Interceptors.CoreInterceptors.csproj">
+      <Project>{cc4c79ba-2c21-4671-8741-8004f3452840}</Project>
+      <Name>NotificationServer.Interceptors.CoreInterceptors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SqlServer\NotificationServer.Service.SqlServer.csproj">
+      <Project>{9cf640bd-53eb-434d-8e33-7cd51188e0b2}</Project>
+      <Name>NotificationServer.Service.SqlServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Templating\Razor\NotificationServer.Templating.Razor.csproj">
+      <Project>{503442a1-fb8f-4b09-a2d2-bfd4bddc7c88}</Project>
+      <Name>NotificationServer.Templating.Razor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service.Hangfire\NotificationServer.Service.Hangfire.csproj">
+      <Project>{b11f17d5-1ecc-4e1f-bd83-9c5234fdf0c7}</Project>
+      <Name>NotificationServer.Service.Hangfire</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

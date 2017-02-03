@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+   <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>http://www.facture.co</licenseUrl>
+    <projectUrl>http://www.facture.co</projectUrl>
+    <iconUrl>https://www.facture.co/favicon.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>PLColab</tags>
+    <files>
+      <file src="bin\NotificationServer.Senders.Mail.dll" target="lib\net452" />
+      <file src="bin\NotificationServer.Senders.Mail.pdb" target="lib\net452" />
+    </files>
+    <dependencies>
+      <group>
+        <dependency id="NotificationServer.Contract" />
+		<dependency id="NotificationServer.Core" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

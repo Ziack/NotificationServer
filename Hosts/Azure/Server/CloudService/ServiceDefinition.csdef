@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="Facture.NotificationServer" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2015-04.2.6">
+  <WorkerRole name="NotificationServer.Azure" vmsize="Small">
+    <Imports>
+      <Import moduleName="RemoteAccess" />
+      <Import moduleName="RemoteForwarder" />
+    </Imports>
+    <Runtime>
+      <Environment>
+        <Variable name="COR_ENABLE_PROFILING" value="1" />
+        <Variable name="COR_PROFILER" value="{71DA0A04-7777-4EC6-9643-7D28B46A8A41}" />        
+      </Environment>
+    </Runtime>
+    <ConfigurationSettings>
+      <Setting name="Microsoft.ServiceBus.ConnectionString" />
+      <Setting name="SmtpMailSender.DeliveryMethod" />
+      <Setting name="SmtpMailSender.DeliveryFormat" />
+      <Setting name="SmtpMailSender.From" />
+      <Setting name="SmtpMailSender.Host" />
+      <Setting name="SmtpMailSender.Port" />
+      <Setting name="SmtpMailSender.DefaultCredentials" />
+      <Setting name="SmtpMailSender.UserName" />
+      <Setting name="SmtpMailSender.Password" />
+      <Setting name="SmtpMailSender.EnableSsl" />
+      <Setting name="NotificationServer.QueueName" />
+      <Setting name="SendGridMailSender.UserName" />
+      <Setting name="SendGridMailSender.Password" />
+      <Setting name="SiteUrl" />
+    </ConfigurationSettings>
+  </WorkerRole>
+</ServiceDefinition>

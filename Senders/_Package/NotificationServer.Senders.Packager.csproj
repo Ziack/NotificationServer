@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{661BE9A3-7B50-47EB-A9F7-0ADD598505DE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_NoUsado</RootNamespace>
+    <AssemblyName>_NoUsado</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NotificationServer.Senders.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Amazon\Senders.Amazon\NotificationServer.Senders.Amazon.csproj">
+      <Project>{728781d2-86f1-4ba5-8322-b954d582f76b}</Project>
+      <Name>NotificationServer.Senders.Amazon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dian\dev\Senders.Dian\NotificationServer.Senders.Dian.csproj">
+      <Project>{d2c7e249-f2bf-45a6-8918-a919b13690b4}</Project>
+      <Name>NotificationServer.Senders.Dian</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DnnCoreMessaging\NotificationServer.Senders.DnnCoreMessaging.csproj">
+      <Project>{6df2d2be-9139-43e8-9f68-ad4fdb630f56}</Project>
+      <Name>NotificationServer.Senders.DnnCoreMessaging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mail\NotificationServer.Senders.Mail.csproj">
+      <Project>{d7ea4561-6491-4ccc-bafd-557cbc5274a7}</Project>
+      <Name>NotificationServer.Senders.Mail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rest\NotificationServer.Senders.Rest.csproj">
+      <Project>{23f507ff-edae-4cea-ad7f-17d5b4fdd61a}</Project>
+      <Name>NotificationServer.Senders.Rest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SendGrid\NotificationServer.Senders.SendGrid.csproj">
+      <Project>{fb44e159-f0f7-45b3-9084-cc989ea79a65}</Project>
+      <Name>NotificationServer.Senders.SendGrid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SPRC\NotificationServer.Senders.SPRC.csproj">
+      <Project>{addfd99c-02da-42af-8431-9c73eef39623}</Project>
+      <Name>NotificationServer.Senders.SPRC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Twitter\NotificationServer.Senders.Twitter.csproj">
+      <Project>{7369d7a1-0665-44ea-a515-83816006d666}</Project>
+      <Name>NotificationServer.Senders.Twitter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PackageManifestName>NotificationServer.Senders</PackageManifestName>
+  </PropertyGroup>
+  <Import Project="$(GO_TOOLS_BASEDIR)\BuildScripts\ZipPackage.targets" Condition="Exists('$(GO_TOOLS_BASEDIR)')" />
+</Project>

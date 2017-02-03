@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="844ca7b5-bdff-496c-b53a-d3ddc4a2d480" ChangeDateTime="01/12/2016 16:41:41">
+    <Property Name="ElementName" Value="[Notification].[Notificaciones].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Notification].[Notificaciones]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="id_notificacion" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="14deb297-c49b-4f2b-b606-86b8d133ad8a" ChangeDateTime="01/12/2016 16:52:04">
+    <Property Name="ElementName" Value="[Notification].[Notificaciones].[json_to]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Notification].[Notificaciones]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ds_to" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a74a5a79-9811-4193-b22a-fcb439a10538" ChangeDateTime="01/13/2016 14:48:51">
+    <Property Name="ElementName" Value="[Notificacion].[EstadosNotificaciones].[cd_Nombre]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Notificacion].[EstadosNotificaciones]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="cd_NombreEstado" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9060d867-80c3-40a9-be04-c249a79130d6" ChangeDateTime="01/13/2016 20:21:35">
+    <Property Name="ElementName" Value="[Notificacion].[Plantillas].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Notificacion].[Plantillas]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="id_plantilla" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="07c132a9-eec0-4553-831c-b6544cec5b31" ChangeDateTime="02/29/2016 22:04:58">
+    <Property Name="ElementName" Value="[dbo].[Usuarios].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Usuarios]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="usuario_id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="01820733-48a4-4330-b057-cfe7d3522ba0" ChangeDateTime="02/29/2016 22:11:12">
+    <Property Name="ElementName" Value="[Notificacion].[Usuarios].[uid]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Notificacion].[Usuarios]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="uid_cd" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="dae8ef69-9787-41be-a2e6-03c68f208457" ChangeDateTime="03/11/2016 20:04:15">
+    <Property Name="ElementName" Value="[dbo].[Tags].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Tags]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="id_tag" />
+  </Operation>
+</Operations>

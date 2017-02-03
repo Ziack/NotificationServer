@@ -1,0 +1,421 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nancy.Validation.FluentValidation</name>
+    </assembly>
+    <members>
+        <member name="T:Nancy.Validation.FluentValidation.AdapterBase">
+            <summary>
+            Defines the core functionality of an adapter between Fluent Validation validators and Nancy validation rules.
+            </summary>
+        </member>
+        <member name="T:Nancy.Validation.FluentValidation.IFluentAdapter">
+            <summary>
+            Defines the functionality of a Fluent Validation adapter.
+            </summary>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.IFluentAdapter.CanHandle(FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Gets whether or not the adapter can handle the provided <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance.
+            </summary>
+            <param name="validator">The <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance to check for compatibility with the adapter.</param>
+            <returns><see langword="true"/> if the adapter can handle the validator, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.IFluentAdapter.GetRules(FluentValidation.Internal.PropertyRule,FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Gets the <see cref="T:Nancy.Validation.ModelValidationRule"/>'s for the Fluent Validation validator.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> instance, containing <see cref="T:Nancy.Validation.ModelValidationRule"/> instances.</returns>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.AdapterBase.CanHandle(FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Gets whether or not the adapter can handle the provided <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance.
+            </summary>
+            <param name="validator">The <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance to check for compatibility with the adapter.</param>
+            <returns><see langword="true"/> if the adapter can handle the validator, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.AdapterBase.GetRules(FluentValidation.Internal.PropertyRule,FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Get the <see cref="T:Nancy.Validation.ModelValidationRule"/> instances that are mapped from the fluent validation rule.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Nancy.Validation.ModelValidationRule"/> instances.</returns>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.AdapterBase.GetMemberNames(FluentValidation.Internal.PropertyRule)">
+            <summary>
+            Gets the name of the members that the validator applied to.
+            </summary>
+            <returns>A string containing the name of members that the validator is applied to.</returns>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.AdapterBase.FormatMessage(FluentValidation.Internal.PropertyRule,FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Get the formatted error message of the validator.
+            </summary>
+            <returns>A formatted error message string.</returns>
+        </member>
+        <member name="T:Nancy.Validation.FluentValidation.FallbackAdapter">
+            <summary>
+            Implementation of <see cref="T:Nancy.Validation.FluentValidation.IFluentAdapterFactory"/> that will always return <see langword="false"/>
+            when <see cref="M:Nancy.Validation.FluentValidation.FallbackAdapter.CanHandle(FluentValidation.Validators.IPropertyValidator)"/> is called. This adapter will be used when no other of the available
+            adapters are able to handle the validator.
+            </summary>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.FallbackAdapter.CanHandle(FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Gets whether or not the adapter can handle the provided <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance.
+            </summary>
+            <param name="validator">The <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance to check for compatibility with the adapter.</param>
+            <returns><see langword="true"/> if the adapter can handle the validator, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.FallbackAdapter.GetRules(FluentValidation.Internal.PropertyRule,FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Get the <see cref="T:Nancy.Validation.ModelValidationRule"/> instances that are mapped from the fluent validation rule.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Nancy.Validation.ModelValidationRule"/> instances.</returns>
+        </member>
+        <member name="T:Nancy.Validation.FluentValidation.FluentValidationRegistrations">
+            <summary>
+            Application registrations for Fluent Validation types.
+            </summary>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.FluentValidationRegistrations.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Nancy.Validation.FluentValidation.FluentValidationRegistrations"/> class, that performs
+            the default registrations of the Fluent Validation types.
+            </summary>
+        </member>
+        <member name="T:Nancy.Validation.FluentValidation.DefaultFluentAdapterFactory">
+            <summary>
+            Default implementation of the <see cref="T:Nancy.Validation.FluentValidation.IFluentAdapterFactory"/> interface.
+            </summary>
+        </member>
+        <member name="T:Nancy.Validation.FluentValidation.IFluentAdapterFactory">
+            <summary>
+            Defines the functionality of a factory for creating <see cref="T:Nancy.Validation.FluentValidation.IFluentAdapter"/> instances.
+            </summary>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.IFluentAdapterFactory.Create(FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Creates a <see cref="T:Nancy.Validation.FluentValidation.IFluentAdapter"/> instance based on the provided <paramref name="propertyValidator"/>.
+            </summary>
+            <param name="propertyValidator">The <see cref="T:FluentValidation.Validators.IPropertyValidator"/> for which the adapter should be created.</param>
+            <returns>An <see cref="T:Nancy.Validation.FluentValidation.IFluentAdapter"/> instance.</returns>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.DefaultFluentAdapterFactory.#ctor(System.Collections.Generic.IEnumerable{Nancy.Validation.FluentValidation.IFluentAdapter})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nancy.Validation.FluentValidation.DefaultFluentAdapterFactory"/> class.
+            </summary>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.DefaultFluentAdapterFactory.Create(FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Creates a <see cref="T:Nancy.Validation.FluentValidation.IFluentAdapter"/> instance based on the provided <paramref name="propertyValidator"/>.
+            </summary>
+            <param name="propertyValidator">The <see cref="T:FluentValidation.Validators.IPropertyValidator"/> for which the adapter should be created.</param>
+            <returns>An <see cref="T:Nancy.Validation.FluentValidation.IFluentAdapter"/> instance.</returns>
+        </member>
+        <member name="T:Nancy.Validation.FluentValidation.EmailAdapter">
+            <summary>
+            Adapter between the Fluent Validation <see cref="T:FluentValidation.Validators.EmailValidator"/> and the Nancy validation rules.
+            </summary>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.EmailAdapter.CanHandle(FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Gets whether or not the adapter can handle the provided <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance.
+            </summary>
+            <param name="validator">The <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance to check for compatibility with the adapter.</param>
+            <returns><see langword="true"/> if the adapter can handle the validator, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.EmailAdapter.GetRules(FluentValidation.Internal.PropertyRule,FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Get the <see cref="T:Nancy.Validation.ModelValidationRule"/> instances that are mapped from the fluent validation rule.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Nancy.Validation.ModelValidationRule"/> instances.</returns>
+        </member>
+        <member name="T:Nancy.Validation.FluentValidation.EqualAdapter">
+            <summary>
+            Adapter between the Fluent Validation <see cref="T:Nancy.Validation.FluentValidation.EqualAdapter"/> and the Nancy validation rules.
+            </summary>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.EqualAdapter.CanHandle(FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Gets whether or not the adapter can handle the provided <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance.
+            </summary>
+            <param name="validator">The <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance to check for compatibility with the adapter.</param>
+            <returns><see langword="true"/> if the adapter can handle the validator, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.EqualAdapter.GetRules(FluentValidation.Internal.PropertyRule,FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Get the <see cref="T:Nancy.Validation.ModelValidationRule"/> instances that are mapped from the fluent validation rule.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Nancy.Validation.ModelValidationRule"/> instances.</returns>
+        </member>
+        <member name="T:Nancy.Validation.FluentValidation.ExactLengthAdapater">
+            <summary>
+            Adapter between the Fluent Validation <see cref="T:FluentValidation.Validators.ExactLengthValidator"/> and the Nancy validation rules.
+            </summary>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.ExactLengthAdapater.CanHandle(FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Gets whether or not the adapter can handle the provided <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance.
+            </summary>
+            <param name="validator">The <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance to check for compatibility with the adapter.</param>
+            <returns><see langword="true"/> if the adapter can handle the validator, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.ExactLengthAdapater.GetRules(FluentValidation.Internal.PropertyRule,FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Get the <see cref="T:Nancy.Validation.ModelValidationRule"/> instances that are mapped from the fluent validation rule.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Nancy.Validation.ModelValidationRule"/> instances.</returns>
+        </member>
+        <member name="T:Nancy.Validation.FluentValidation.ExclusiveBetweenAdapter">
+            <summary>
+            Adapter between the Fluent Validation <see cref="T:FluentValidation.Validators.ExclusiveBetweenValidator"/> and the Nancy validation rules.
+            </summary>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.ExclusiveBetweenAdapter.CanHandle(FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Gets whether or not the adapter can handle the provided <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance.
+            </summary>
+            <param name="validator">The <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance to check for compatibility with the adapter.</param>
+            <returns><see langword="true"/> if the adapter can handle the validator, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.ExclusiveBetweenAdapter.GetRules(FluentValidation.Internal.PropertyRule,FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Get the <see cref="T:Nancy.Validation.ModelValidationRule"/> instances that are mapped from the fluent validation rule.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Nancy.Validation.ModelValidationRule"/> instances.</returns>
+        </member>
+        <member name="T:Nancy.Validation.FluentValidation.FluentValidationValidator">
+            <summary>
+            The default Fluent Validation implementation of <see cref="T:FluentValidation.IValidator"/>.
+            </summary>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.FluentValidationValidator.#ctor(FluentValidation.IValidator,Nancy.Validation.FluentValidation.IFluentAdapterFactory,System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nancy.Validation.FluentValidation.FluentValidationValidator"/> class for the
+            specified <see cref="T:FluentValidation.IValidator"/>.
+            </summary>
+            <param name="validator">The Fluent Validation validator that should be used.</param>
+            <param name="factory">Factory for creating adapters for the type that is being validated.</param>
+            <param name="modelType">The type of the model that is being validated.</param>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.FluentValidationValidator.Validate(System.Object,Nancy.NancyContext)">
+            <summary>
+            Validates the specified instance.
+            </summary>
+            <param name="instance">The instance that should be validated.</param>
+            <param name="context">The <see cref="T:Nancy.NancyContext"/> of the current request.</param>
+            <returns>A <see cref="T:Nancy.Validation.ModelValidationResult"/> with the result of the validation.</returns>
+        </member>
+        <member name="P:Nancy.Validation.FluentValidation.FluentValidationValidator.Description">
+            <summary>
+            Gets the description of the validator.
+            </summary>
+            <value>A <see cref="T:Nancy.Validation.ModelValidationDescriptor"/> instance.</value>
+        </member>
+        <member name="P:Nancy.Validation.FluentValidation.FluentValidationValidator.ModelType">
+            <summary>
+            Gets the <see cref="T:System.Type"/> of the model that is being validated by the validator.
+            </summary>
+        </member>
+        <member name="T:Nancy.Validation.FluentValidation.FluentValidationValidatorFactory">
+            <summary>
+            Creates and <see cref="T:FluentValidation.IValidator"/> for Fluent Validation.
+            </summary>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.FluentValidationValidatorFactory.#ctor(Nancy.Validation.FluentValidation.IFluentAdapterFactory,System.Collections.Generic.IEnumerable{FluentValidation.IValidator})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nancy.Validation.FluentValidation.FluentValidationValidatorFactory"/> instance, with the
+            provided <see cref="T:Nancy.Validation.FluentValidation.IFluentAdapterFactory"/>.
+            </summary>
+            <param name="adapterFactory">The factory that should be usdd to create <see cref="T:Nancy.Validation.FluentValidation.IFluentAdapter"/> instances.</param>
+            <param name="validators">The <see cref="T:FluentValidation.IValidator"/> instance that are available for validation.</param>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.FluentValidationValidatorFactory.Create(System.Type)">
+            <summary>
+            Creates a <see cref="T:Nancy.Validation.IModelValidator"/> instance for the given type.
+            </summary>
+            <param name="type">The type of the model that is being validated.</param>
+            <returns>An <see cref="T:Nancy.Validation.IModelValidator"/> instance. If no fluent validation rules were found for the specified <paramref name="type"/> then <see langword="null"/> is returned.</returns>
+        </member>
+        <member name="T:Nancy.Validation.FluentValidation.GreaterThanAdapter">
+            <summary>
+            Adapter between the Fluent Validation <see cref="T:FluentValidation.Validators.GreaterThanValidator"/> and the Nancy validation rules.
+            </summary>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.GreaterThanAdapter.CanHandle(FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Gets whether or not the adapter can handle the provided <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance.
+            </summary>
+            <param name="validator">The <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance to check for compatibility with the adapter.</param>
+            <returns><see langword="true"/> if the adapter can handle the validator, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.GreaterThanAdapter.GetRules(FluentValidation.Internal.PropertyRule,FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Get the <see cref="T:Nancy.Validation.ModelValidationRule"/> instances that are mapped from the fluent validation rule.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Nancy.Validation.ModelValidationRule"/> instances.</returns>
+        </member>
+        <member name="T:Nancy.Validation.FluentValidation.GreaterThanOrEqualAdapter">
+            <summary>
+            Adapter between the Fluent Validation <see cref="T:FluentValidation.Validators.GreaterThanOrEqualValidator"/> and the Nancy validation rules.
+            </summary>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.GreaterThanOrEqualAdapter.CanHandle(FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Gets whether or not the adapter can handle the provided <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance.
+            </summary>
+            <param name="validator">The <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance to check for compatibility with the adapter.</param>
+            <returns><see langword="true"/> if the adapter can handle the validator, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.GreaterThanOrEqualAdapter.GetRules(FluentValidation.Internal.PropertyRule,FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Get the <see cref="T:Nancy.Validation.ModelValidationRule"/> instances that are mapped from the fluent validation rule.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Nancy.Validation.ModelValidationRule"/> instances.</returns>
+        </member>
+        <member name="T:Nancy.Validation.FluentValidation.InclusiveBetweenAdapter">
+            <summary>
+            Adapter between the Fluent Validation <see cref="T:FluentValidation.Validators.InclusiveBetweenValidator"/> and the Nancy validation rules.
+            </summary>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.InclusiveBetweenAdapter.CanHandle(FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Gets whether or not the adapter can handle the provided <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance.
+            </summary>
+            <param name="validator">The <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance to check for compatibility with the adapter.</param>
+            <returns><see langword="true"/> if the adapter can handle the validator, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.InclusiveBetweenAdapter.GetRules(FluentValidation.Internal.PropertyRule,FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Get the <see cref="T:Nancy.Validation.ModelValidationRule"/> instances that are mapped from the fluent validation rule.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Nancy.Validation.ModelValidationRule"/> instances.</returns>
+        </member>
+        <member name="T:Nancy.Validation.FluentValidation.LengthAdapter">
+            <summary>
+            Adapter between the Fluent Validation <see cref="T:FluentValidation.Validators.LengthValidator"/> and the Nancy validation rules.
+            </summary>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.LengthAdapter.CanHandle(FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Gets whether or not the adapter can handle the provided <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance.
+            </summary>
+            <param name="validator">The <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance to check for compatibility with the adapter.</param>
+            <returns><see langword="true"/> if the adapter can handle the validator, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.LengthAdapter.GetRules(FluentValidation.Internal.PropertyRule,FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Get the <see cref="T:Nancy.Validation.ModelValidationRule"/> instances that are mapped from the fluent validation rule.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Nancy.Validation.ModelValidationRule"/> instances.</returns>
+        </member>
+        <member name="T:Nancy.Validation.FluentValidation.LessThanAdapter">
+            <summary>
+            Adapter between the Fluent Validation <see cref="T:Nancy.Validation.FluentValidation.LessThanAdapter"/> and the Nancy validation rules.
+            </summary>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.LessThanAdapter.CanHandle(FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Gets whether or not the adapter can handle the provided <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance.
+            </summary>
+            <param name="validator">The <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance to check for compatibility with the adapter.</param>
+            <returns><see langword="true"/> if the adapter can handle the validator, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.LessThanAdapter.GetRules(FluentValidation.Internal.PropertyRule,FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Get the <see cref="T:Nancy.Validation.ModelValidationRule"/> instances that are mapped from the fluent validation rule.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Nancy.Validation.ModelValidationRule"/> instances.</returns>
+        </member>
+        <member name="T:Nancy.Validation.FluentValidation.LessThanOrEqualAdapter">
+            <summary>
+            Adapter between the Fluent Validation <see cref="T:FluentValidation.Validators.LessThanOrEqualValidator"/> and the Nancy validation rules.
+            </summary>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.LessThanOrEqualAdapter.CanHandle(FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Gets whether or not the adapter can handle the provided <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance.
+            </summary>
+            <param name="validator">The <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance to check for compatibility with the adapter.</param>
+            <returns><see langword="true"/> if the adapter can handle the validator, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.LessThanOrEqualAdapter.GetRules(FluentValidation.Internal.PropertyRule,FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Get the <see cref="T:Nancy.Validation.ModelValidationRule"/> instances that are mapped from the fluent validation rule.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Nancy.Validation.ModelValidationRule"/> instances.</returns>
+        </member>
+        <member name="T:Nancy.Validation.FluentValidation.NotEmptyAdapter">
+            <summary>
+            Adapter between the Fluent Validation <see cref="T:FluentValidation.Validators.NotEmptyValidator"/> and the Nancy validation rules.
+            </summary>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.NotEmptyAdapter.CanHandle(FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Gets whether or not the adapter can handle the provided <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance.
+            </summary>
+            <param name="validator">The <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance to check for compatibility with the adapter.</param>
+            <returns><see langword="true"/> if the adapter can handle the validator, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.NotEmptyAdapter.GetRules(FluentValidation.Internal.PropertyRule,FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Get the <see cref="T:Nancy.Validation.ModelValidationRule"/> instances that are mapped from the fluent validation rule.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Nancy.Validation.ModelValidationRule"/> instances.</returns>
+        </member>
+        <member name="T:Nancy.Validation.FluentValidation.NotEqualAdapter">
+            <summary>
+            Adapter between the Fluent Validation <see cref="T:FluentValidation.Validators.NotEqualValidator"/> and the Nancy validation rules.
+            </summary>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.NotEqualAdapter.CanHandle(FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Gets whether or not the adapter can handle the provided <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance.
+            </summary>
+            <param name="validator">The <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance to check for compatibility with the adapter.</param>
+            <returns><see langword="true"/> if the adapter can handle the validator, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.NotEqualAdapter.GetRules(FluentValidation.Internal.PropertyRule,FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Get the <see cref="T:Nancy.Validation.ModelValidationRule"/> instances that are mapped from the fluent validation rule.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Nancy.Validation.ModelValidationRule"/> instances.</returns>
+        </member>
+        <member name="T:Nancy.Validation.FluentValidation.NotNullAdapter">
+            <summary>
+            Adapter between the Fluent Validation <see cref="T:FluentValidation.Validators.NotNullValidator"/> and the Nancy validation rules.
+            </summary>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.NotNullAdapter.CanHandle(FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Gets whether or not the adapter can handle the provided <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance.
+            </summary>
+            <param name="validator">The <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance to check for compatibility with the adapter.</param>
+            <returns><see langword="true"/> if the adapter can handle the validator, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.NotNullAdapter.GetRules(FluentValidation.Internal.PropertyRule,FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Get the <see cref="T:Nancy.Validation.ModelValidationRule"/> instances that are mapped from the fluent validation rule.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Nancy.Validation.ModelValidationRule"/> instances.</returns>
+        </member>
+        <member name="T:Nancy.Validation.FluentValidation.RegularExpressionAdapter">
+            <summary>
+            Adapter between the Fluent Validation <see cref="T:FluentValidation.Validators.RegularExpressionValidator"/> and the Nancy validation rules.
+            </summary>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.RegularExpressionAdapter.CanHandle(FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Gets whether or not the adapter can handle the provided <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance.
+            </summary>
+            <param name="validator">The <see cref="T:FluentValidation.Validators.IPropertyValidator"/> instance to check for compatability with the adapter.</param>
+            <returns><see langword="true"/> if the adapter can handle the validator, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Nancy.Validation.FluentValidation.RegularExpressionAdapter.GetRules(FluentValidation.Internal.PropertyRule,FluentValidation.Validators.IPropertyValidator)">
+            <summary>
+            Get the <see cref="T:Nancy.Validation.ModelValidationRule"/> instances that are mapped from the fluent validation rule.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Nancy.Validation.ModelValidationRule"/> instances.</returns>
+        </member>
+    </members>
+</doc>

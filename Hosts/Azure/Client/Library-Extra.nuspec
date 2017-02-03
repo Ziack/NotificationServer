@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <!--ADVERTENCIA: Solo incluir este nodo si hay dependencias -->
+  <dependencies>
+    <dependency id="NotificationServer.Client" version="1.0.0"/>
+	<dependency id="NotificationServer.Contract" version="1.0.0"/>
+  </dependencies>
+  <!--ADVERTENCIA: Solo incluir archivos extra. Por defecto, ya se include la dll del proyecto y su respectivo *.pdb -->
+  <files>
+    <!--<file src="bin\ComponenteExtra.dll" target="lib\net46\ComponenteExtra.dll" />-->
+  </files>
+</package>

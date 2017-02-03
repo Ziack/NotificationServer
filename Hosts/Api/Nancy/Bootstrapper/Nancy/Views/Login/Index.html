@@ -1,0 +1,30 @@
+﻿@Master['Views/Master']
+
+@Section['Home-Link'] class="active" @EndSection
+
+@Section['Title']
+    Login
+@EndSection
+
+
+@Section['Content']
+
+@If.HasMensajeError
+<div class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> 
+    @Model.MensajeError
+</div>
+@EndIf
+
+<form method="post" action="" class="jumbotron">
+    <div class="form-group">
+        <label for="Username">Nombre de usuario</label>
+        <input name="Username" type="text" class="form-control" id="Username" value="@Model.Username" placeholder="Usuario">
+    </div>
+    <div class="form-group">
+        <label for="UnencryptedPassword">Contraseña</label>
+        <input name="UnencryptedPassword" type="password" class="form-control" id="UnencryptedPassword" placeholder="Contraseña">
+    </div>
+    <input type="submit" class="btn btn-lg btn-primary" value="Iniciar Sesión" />
+</form>
+@EndSection

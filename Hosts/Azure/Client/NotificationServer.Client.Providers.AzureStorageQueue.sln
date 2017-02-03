@@ -1,0 +1,106 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationServer.Client.Providers.AzureStorageQueue", "NotificationServer.Client.Providers.AzureStorageQueue.csproj", "{820FEA1E-E161-4C41-9031-209170E68245}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{A8109A4E-4EB0-4767-81B0-7800BAA18977}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationServer.Contract", "..\..\..\1-Core\Common\Contract\NotificationServer.Contract.csproj", "{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{8C158655-8110-446E-A6B7-D5C861351D07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationServer.Client", "..\..\..\4-Clients\Client\NotificationServer.Client.csproj", "{42A877BA-16E5-4848-A40B-7D6810892CEE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Pre|Any CPU = Pre|Any CPU
+		Pro|Any CPU = Pro|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Sandbox|Any CPU = Sandbox|Any CPU
+		Test|Any CPU = Test|Any CPU
+		Training|Any CPU = Training|Any CPU
+		Validation|Any CPU = Validation|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{820FEA1E-E161-4C41-9031-209170E68245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{820FEA1E-E161-4C41-9031-209170E68245}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{820FEA1E-E161-4C41-9031-209170E68245}.Pre|Any CPU.ActiveCfg = Pre|Any CPU
+		{820FEA1E-E161-4C41-9031-209170E68245}.Pre|Any CPU.Build.0 = Pre|Any CPU
+		{820FEA1E-E161-4C41-9031-209170E68245}.Pro|Any CPU.ActiveCfg = Pro|Any CPU
+		{820FEA1E-E161-4C41-9031-209170E68245}.Pro|Any CPU.Build.0 = Pro|Any CPU
+		{820FEA1E-E161-4C41-9031-209170E68245}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{820FEA1E-E161-4C41-9031-209170E68245}.Release|Any CPU.Build.0 = Release|Any CPU
+		{820FEA1E-E161-4C41-9031-209170E68245}.Sandbox|Any CPU.ActiveCfg = Sandbox|Any CPU
+		{820FEA1E-E161-4C41-9031-209170E68245}.Sandbox|Any CPU.Build.0 = Sandbox|Any CPU
+		{820FEA1E-E161-4C41-9031-209170E68245}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{820FEA1E-E161-4C41-9031-209170E68245}.Test|Any CPU.Build.0 = Test|Any CPU
+		{820FEA1E-E161-4C41-9031-209170E68245}.Training|Any CPU.ActiveCfg = Training|Any CPU
+		{820FEA1E-E161-4C41-9031-209170E68245}.Training|Any CPU.Build.0 = Training|Any CPU
+		{820FEA1E-E161-4C41-9031-209170E68245}.Validation|Any CPU.ActiveCfg = Validation|Any CPU
+		{820FEA1E-E161-4C41-9031-209170E68245}.Validation|Any CPU.Build.0 = Validation|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Pre|Any CPU.ActiveCfg = Pre|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Pre|Any CPU.Build.0 = Pre|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Pro|Any CPU.ActiveCfg = Pro|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Pro|Any CPU.Build.0 = Pro|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Sandbox|Any CPU.ActiveCfg = Sandbox|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Sandbox|Any CPU.Build.0 = Sandbox|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Test|Any CPU.Build.0 = Test|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Training|Any CPU.ActiveCfg = Training|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Training|Any CPU.Build.0 = Training|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Validation|Any CPU.ActiveCfg = Validation|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Validation|Any CPU.Build.0 = Validation|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Pre|Any CPU.ActiveCfg = Pre|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Pre|Any CPU.Build.0 = Pre|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Pro|Any CPU.ActiveCfg = Pro|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Pro|Any CPU.Build.0 = Pro|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Sandbox|Any CPU.ActiveCfg = Sandbox|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Sandbox|Any CPU.Build.0 = Sandbox|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Test|Any CPU.Build.0 = Test|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Training|Any CPU.ActiveCfg = Training|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Training|Any CPU.Build.0 = Training|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Validation|Any CPU.ActiveCfg = Validation|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Validation|Any CPU.Build.0 = Validation|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F} = {A8109A4E-4EB0-4767-81B0-7800BAA18977}
+		{42A877BA-16E5-4848-A40B-7D6810892CEE} = {8C158655-8110-446E-A6B7-D5C861351D07}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://fctfs1:8080/tfs/colab
+		SccProjectUniqueName0 = NotificationServer.Client.Providers.AzureStorageQueue.csproj
+		SccProjectName0 = .
+		SccAuxPath0 = http://fctfs1:8080/tfs/colab
+		SccLocalPath0 = .
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = ..\\..\\..\\1-Core\\Common\\Contract\\NotificationServer.Contract.csproj
+		SccProjectTopLevelParentUniqueName1 = NotificationServer.Client.Providers.AzureStorageQueue.sln
+		SccProjectName1 = ../../../1-Core/Common/Contract
+		SccAuxPath1 = http://fctfs1:8080/tfs/colab
+		SccLocalPath1 = ..\\..\\..\\1-Core\\Common\\Contract
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = ..\\..\\..\\4-Clients\\Client\\NotificationServer.Client.csproj
+		SccProjectTopLevelParentUniqueName2 = NotificationServer.Client.Providers.AzureStorageQueue.sln
+		SccProjectName2 = ../../../4-Clients/Client
+		SccAuxPath2 = http://fctfs1:8080/tfs/colab
+		SccLocalPath2 = ..\\..\\..\\4-Clients\\Client
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal

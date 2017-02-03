@@ -1,0 +1,123 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationServer.Client.Providers.Rest", "NotificationServer.Client.Providers.Rest.csproj", "{A6DBE38A-CB2F-4556-80A0-E5EE23A8BB1C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{80C631EA-D4EC-401E-949C-835DEC34013C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationServer.Contract", "..\..\..\..\..\1-Core\Common\Contract\NotificationServer.Contract.csproj", "{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationServer.Core", "..\..\..\..\..\1-Core\Common\Core\NotificationServer.Core.csproj", "{051C79A8-7FEE-4007-9886-BE00708B9165}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{C9F8DD4E-7643-4F78-B613-FD4152364833}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationServer.Client", "..\..\..\..\..\4-Clients\Client\NotificationServer.Client.csproj", "{42A877BA-16E5-4848-A40B-7D6810892CEE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Pre|Any CPU = Pre|Any CPU
+		Pro|Any CPU = Pro|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Sandbox|Any CPU = Sandbox|Any CPU
+		Test|Any CPU = Test|Any CPU
+		Training|Any CPU = Training|Any CPU
+		Validation|Any CPU = Validation|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6DBE38A-CB2F-4556-80A0-E5EE23A8BB1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6DBE38A-CB2F-4556-80A0-E5EE23A8BB1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6DBE38A-CB2F-4556-80A0-E5EE23A8BB1C}.Pre|Any CPU.ActiveCfg = Release|Any CPU
+		{A6DBE38A-CB2F-4556-80A0-E5EE23A8BB1C}.Pre|Any CPU.Build.0 = Release|Any CPU
+		{A6DBE38A-CB2F-4556-80A0-E5EE23A8BB1C}.Pro|Any CPU.ActiveCfg = Release|Any CPU
+		{A6DBE38A-CB2F-4556-80A0-E5EE23A8BB1C}.Pro|Any CPU.Build.0 = Release|Any CPU
+		{A6DBE38A-CB2F-4556-80A0-E5EE23A8BB1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6DBE38A-CB2F-4556-80A0-E5EE23A8BB1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6DBE38A-CB2F-4556-80A0-E5EE23A8BB1C}.Sandbox|Any CPU.ActiveCfg = Release|Any CPU
+		{A6DBE38A-CB2F-4556-80A0-E5EE23A8BB1C}.Sandbox|Any CPU.Build.0 = Release|Any CPU
+		{A6DBE38A-CB2F-4556-80A0-E5EE23A8BB1C}.Test|Any CPU.ActiveCfg = Release|Any CPU
+		{A6DBE38A-CB2F-4556-80A0-E5EE23A8BB1C}.Test|Any CPU.Build.0 = Release|Any CPU
+		{A6DBE38A-CB2F-4556-80A0-E5EE23A8BB1C}.Training|Any CPU.ActiveCfg = Release|Any CPU
+		{A6DBE38A-CB2F-4556-80A0-E5EE23A8BB1C}.Training|Any CPU.Build.0 = Release|Any CPU
+		{A6DBE38A-CB2F-4556-80A0-E5EE23A8BB1C}.Validation|Any CPU.ActiveCfg = Release|Any CPU
+		{A6DBE38A-CB2F-4556-80A0-E5EE23A8BB1C}.Validation|Any CPU.Build.0 = Release|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Pre|Any CPU.ActiveCfg = Pre|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Pre|Any CPU.Build.0 = Pre|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Pro|Any CPU.ActiveCfg = Pro|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Pro|Any CPU.Build.0 = Pro|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Sandbox|Any CPU.ActiveCfg = Sandbox|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Sandbox|Any CPU.Build.0 = Sandbox|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Test|Any CPU.Build.0 = Test|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Training|Any CPU.ActiveCfg = Training|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Training|Any CPU.Build.0 = Training|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Validation|Any CPU.ActiveCfg = Validation|Any CPU
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F}.Validation|Any CPU.Build.0 = Validation|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Pre|Any CPU.ActiveCfg = Pre|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Pre|Any CPU.Build.0 = Pre|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Pro|Any CPU.ActiveCfg = Pro|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Pro|Any CPU.Build.0 = Pro|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Release|Any CPU.Build.0 = Release|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Sandbox|Any CPU.ActiveCfg = Sandbox|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Sandbox|Any CPU.Build.0 = Sandbox|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Test|Any CPU.Build.0 = Test|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Training|Any CPU.ActiveCfg = Training|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Training|Any CPU.Build.0 = Training|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Validation|Any CPU.ActiveCfg = Validation|Any CPU
+		{051C79A8-7FEE-4007-9886-BE00708B9165}.Validation|Any CPU.Build.0 = Validation|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Pre|Any CPU.ActiveCfg = Pre|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Pre|Any CPU.Build.0 = Pre|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Pro|Any CPU.ActiveCfg = Pro|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Pro|Any CPU.Build.0 = Pro|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Sandbox|Any CPU.ActiveCfg = Sandbox|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Sandbox|Any CPU.Build.0 = Sandbox|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Test|Any CPU.Build.0 = Test|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Training|Any CPU.ActiveCfg = Training|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Training|Any CPU.Build.0 = Training|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Validation|Any CPU.ActiveCfg = Validation|Any CPU
+		{42A877BA-16E5-4848-A40B-7D6810892CEE}.Validation|Any CPU.Build.0 = Validation|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CF147E43-853D-4CA5-AEB3-C2C07846BF1F} = {80C631EA-D4EC-401E-949C-835DEC34013C}
+		{051C79A8-7FEE-4007-9886-BE00708B9165} = {80C631EA-D4EC-401E-949C-835DEC34013C}
+		{42A877BA-16E5-4848-A40B-7D6810892CEE} = {C9F8DD4E-7643-4F78-B613-FD4152364833}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://fctfs1:8080/tfs/colab
+		SccProjectUniqueName0 = NotificationServer.Client.Providers.Rest.csproj
+		SccLocalPath0 = .
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = ..\\..\\..\\..\\..\\1-Core\\Common\\Contract\\NotificationServer.Contract.csproj
+		SccProjectTopLevelParentUniqueName2 = NotificationServer.Client.Providers.Rest.sln
+		SccProjectName2 = ../../../../../1-Core/Common/Contract
+		SccLocalPath2 = ..\\..\\..\\..\\..\\1-Core\\Common\\Contract
+		SccProjectUniqueName3 = ..\\..\\..\\..\\..\\1-Core\\Common\\Core\\NotificationServer.Core.csproj
+		SccProjectTopLevelParentUniqueName3 = NotificationServer.Client.Providers.Rest.sln
+		SccProjectName3 = ../../../../../1-Core/Common/Core
+		SccLocalPath3 = ..\\..\\..\\..\\..\\1-Core\\Common\\Core
+		SccProjectUniqueName4 = ..\\..\\..\\..\\..\\4-Clients\\Client\\NotificationServer.Client.csproj
+		SccProjectTopLevelParentUniqueName4 = NotificationServer.Client.Providers.Rest.sln
+		SccProjectName4 = ../../../../../4-Clients/Client
+		SccLocalPath4 = ..\\..\\..\\..\\..\\4-Clients\\Client
+	EndGlobalSection
+EndGlobal

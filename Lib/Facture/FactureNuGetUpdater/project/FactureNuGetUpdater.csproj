@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B569987C-1B82-4F2C-B545-4E1BA6E48924}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_NoUsado</RootNamespace>
+    <AssemblyName>_NoUsado</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\XadesNet-Debug.1.0.17\lib\net46\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Exceptional.Core, Version=9.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Exceptional.Core-Debug.9.0.34\lib\net46\Exceptional.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Facture.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facture.Core-Debug.1.0.82\lib\net46\Facture.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Facture.Core.Api, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facture.Core.Api.1.0.57\lib\net46\Facture.Core.Api.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Facture.Core.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facture.Core.Domain.1.0.54\lib\net46\Facture.Core.Domain.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Facture.Core.DotNetNuke, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facture.Core.DotNetNuke-Debug.1.0.75\lib\net46\Facture.Core.DotNetNuke.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Facture.Core.NHibernate, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facture.Core.NHibernate-Debug.1.0.73\lib\net46\Facture.Core.NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Facture.Core.NinjectModule, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facture.Core.NinjectModule-Debug.1.0.35\lib\net46\Facture.Core.NinjectModule.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Facture.IdentityAccess.Application, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facture.IdentityAccess.Application-Debug.1.0.138\lib\net46\Facture.IdentityAccess.Application.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Facture.IdentityAccess.AuthServices, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facture.IdentityAccess.AuthServices-Debug.1.0.142\lib\net46\Facture.IdentityAccess.AuthServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Facture.IdentityAccess.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facture.IdentityAccess.Contracts-Debug.1.0.133\lib\net46\Facture.IdentityAccess.Contracts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Facture.IdentityAccess.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facture.IdentityAccess.Domain.1.0.111\lib\net46\Facture.IdentityAccess.Domain.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Facture.IdentityAccess.Infraestructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facture.IdentityAccess.Infraestructure-Debug.1.0.135\lib\net46\Facture.IdentityAccess.Infraestructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Facture.IdentityAccess.NinjectModule, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facture.IdentityAccess.NinjectModule-Debug.1.0.43\lib\net46\Facture.IdentityAccess.NinjectModule.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Facture.Pdf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facture.Pdf-Debug.1.0.9\lib\net46\Facture.Pdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Facture.XRays, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facture.XRays.1.0.34\lib\net46\Facture.XRays.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Facture.XRays.AzureStorage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facture.XRays.AzureStorage.1.0.34\lib\net46\Facture.XRays.AzureStorage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Facture.XRays.Log4Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facture.XRays.Log4Net.1.0.34\lib\net46\Facture.XRays.Log4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ObjectFlow.Core, Version=9.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ObjectFlow.Core-Debug.9.0.35\lib\net46\ObjectFlow.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ObjectFlow.Core.Extensibility, Version=9.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ObjectFlow.Core.Extensibility-Debug.9.0.40\lib\net46\ObjectFlow.Core.Extensibility.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Security.Cryptography, Version=1.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XadesNet-Debug.1.0.17\lib\net46\Security.Cryptography.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="XadesNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XadesNet-Debug.1.0.17\lib\net46\XadesNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Zhucai.LambdaParser, Version=1.1.6124.29767, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facture.Core.Domain.1.0.54\lib\net46\Zhucai.LambdaParser.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>Powershell.exe -NonInteractive -NoLogo -NoProfile -ExecutionPolicy Bypass -File "%25GO_TOOLS_BASEDIR%25\Scripts\VS-UpdateLib-FromProjectNugets.ps1" -ProjectFile "$(ProjectPath)" -AssemblyTargetFolder "$(SolutionDir).."
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="Facture.NotificationServer" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="4" osVersion="*" schemaVersion="2015-04.2.6">
+  <Role name="NotificationServer.Azure">
+    <Instances count="2" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.ServiceBus.ConnectionString" value="UseDevelopmentStorage=true;" />
+      <Setting name="SmtpMailSender.DeliveryMethod" value="Network" />
+      <Setting name="SmtpMailSender.DeliveryFormat" value="SevenBit" />
+      <Setting name="SmtpMailSender.From" value="notification_tos@facturecolombia.com" />
+      <Setting name="SmtpMailSender.Host" value="192.168.221.95" />
+      <Setting name="SmtpMailSender.Port" value="25" />
+      <Setting name="SmtpMailSender.DefaultCredentials" value="false" />
+      <Setting name="SmtpMailSender.UserName" value="catchall@fakedomain.com" />
+      <Setting name="SmtpMailSender.Password" value="" />
+      <Setting name="SmtpMailSender.EnableSsl" value="false" />
+      <Setting name="NotificationServer.QueueName" value="notifications-dev" />
+      <Setting name="SendGridMailSender.UserName" value="azure_6d8a58c4ff20e4a3f1d3b0cc2aae3147@azure.com" />
+      <Setting name="SendGridMailSender.Password" value="jZmxRn7OFlzP3uG" />
+      <Setting name="SiteUrl" value="http://puertobahia-test.azurewebsites.net/" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="FactureWeb" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBlQYJKoZIhvcNAQcDoIIBhjCCAYICAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEEsaRnuKOkquQq4axwCBMhYwDQYJKoZIhvcNAQEBBQAEggEA2sBK3vNjpINNicJYOOtsq3EkWLQ7ty5ZEyqCKB1EKhs+3o9GRGSblqWnitkKwTpcdrEuG5ZswPbkAe+COimzcr+lmoSOjAzGxltTRUEzKQ1IJrPGaHYA+OKdcA0+EOlK+p7CclRbpT73gJjvBIqUwZOqa35/6HcapOf4aN6JPZmf3cwfzZiGypsNo8lmkhThcKuoBTPRHMhRcPXGVC9seX3c9RVVFBbjANHJ5eCoLa0rFQ6kCmqNN/L4uaRxMWjmsngjooD7EGrGTxUgRY8NvCkvS0UueEdaZsdB4j6C8Y61Pfk5Q5SqLMLVfBvuqb0M3BN9bCEI3ra2ep3vuTLt9jArBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECGtWh/qsEgargAgVmI6YA7BDHg==" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2016-05-12T23:59:59.0000000-05:00" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="C64799B2267C102F6A14C99EDFCF753633AE4475" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+</ServiceConfiguration>

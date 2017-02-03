@@ -1,0 +1,43 @@
+﻿@Master['Views/Master']
+
+@Section['Apps-Link'] class="active" @EndSection
+
+@Section['Title']
+    Applications
+@EndSection
+
+
+@Section['Content']
+<div id="Apps">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: Apps">
+            <tr>
+                <td>
+                    <strong data-bind="text: Name"></strong>
+                </td>
+                <td>
+                    <div data-bind="text: Description"></div>
+                    <div class="modal-open well well-sm">
+                        <code data-bind="text: Token"></code>
+                        <button class="btn btn-default btn-sm pull-right" title="Generar Token" data-bind="click: $root.GenerateToken">
+                            <i class="glyphicon glyphicon-repeat"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+@EndSection
+
+@Section['Scripts']
+<script type="text/javascript" src="/Views/Apps/Client/Apps.Model.js"></script>
+<script type="text/javascript" src="/Views/Apps/Client/Apps.ViewModel.js"></script>
+<script type="text/javascript" src="/Views/Apps/Client/Apps.Start.js"></script>
+@EndSection

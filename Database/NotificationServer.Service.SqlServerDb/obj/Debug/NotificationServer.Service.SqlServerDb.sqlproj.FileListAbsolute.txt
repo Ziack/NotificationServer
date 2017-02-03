@@ -1,0 +1,9 @@
+C:\TFS1\Colab\NotificationServer\1Dev\0-Database\NotificationServer.Service.SqlServerDb\bin\Debug\NotificationServer.Service.SqlServerDb.dacpac
+C:\TFS1\Colab\NotificationServer\1Dev\0-Database\NotificationServer.Service.SqlServerDb\bin\Debug\NotificationServer.Service.SqlServerDb.dll
+C:\TFS1\Colab\NotificationServer\1Dev\0-Database\NotificationServer.Service.SqlServerDb\bin\Debug\NotificationServer.Service.SqlServerDb.pdb
+C:\TFS1\Colab\NotificationServer\1Dev\0-Database\NotificationServer.Service.SqlServerDb\obj\Debug\NotificationServer.Service.SqlServerDb.dll
+C:\TFS1\Colab\NotificationServer\1Dev\0-Database\NotificationServer.Service.SqlServerDb\obj\Debug\NotificationServer.Service.SqlServerDb.pdb
+C:\TFS1\Colab\NotificationServer\1Dev\0-Database\NotificationServer.Service.SqlServerDb\obj\Debug\Model.xml
+C:\TFS1\Colab\NotificationServer\1Dev\0-Database\NotificationServer.Service.SqlServerDb\obj\Debug\refactor.xml
+C:\TFS1\Colab\NotificationServer\1Dev\0-Database\NotificationServer.Service.SqlServerDb\obj\Debug\postdeploy.sql
+C:\TFS1\Colab\NotificationServer\1Dev\0-Database\NotificationServer.Service.SqlServerDb\obj\Debug\predeploy.sql

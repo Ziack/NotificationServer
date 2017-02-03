@@ -1,0 +1,12 @@
+﻿<package>
+  <assemblies>
+    <assembly>NotificationServer.Senders.Amazon.dll</assembly>
+    <assembly>NotificationServer.Senders.Dian.dll</assembly>
+    <assembly>NotificationServer.Senders.DnnCoreMessaging.dll</assembly>
+    <assembly>NotificationServer.Senders.Mail.dll</assembly>
+    <assembly>NotificationServer.Senders.Rest.dll</assembly>
+    <assembly>NotificationServer.Senders.SendGrid.dll</assembly>
+    <assembly>NotificationServer.Senders.Twitter.dll</assembly>
+    <assembly>NotificationServer.Senders.SPRC.dll</assembly>
+  </assemblies>
+</package>
