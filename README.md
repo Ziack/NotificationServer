@@ -7,7 +7,6 @@ Los *senders* son los encargados de realizar la entrega de una nofificación a s
 
 Método | Propósito | Tipo de Retorno
 ---|---|---
-
 **Send(_Notification_)** | Envíar notificaciones sincrónicamente. | *void*
 **SendAsync(_Notification_)** | Envíar notificaciones asincrónicamente. | *void*
 
